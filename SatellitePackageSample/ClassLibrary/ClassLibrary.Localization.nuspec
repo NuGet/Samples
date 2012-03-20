@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <version>1.0.0</version>
+    <authors>jeffhandley</authors>
+    <owners />
+    <dependencies>
+      <dependency id="ClassLibrary.ja-jp" version="1.0.0" />
+      <dependency id="ClassLibrary.ru-ru" version="1.0.0" />
+    </dependencies>
+    <id>ClassLibrary.Localization</id>
+    <title />
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Full localization package for ClassLibrary</description>
+    <language>en-US</language>
+  </metadata>
+  <files />
+</package>

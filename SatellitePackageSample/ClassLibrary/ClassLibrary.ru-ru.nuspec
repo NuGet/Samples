@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <version>1.0.0</version>
+    <authors>jeffhandley</authors>
+    <owners />
+    <dependencies>
+      <dependency id="ClassLibrary" version="1.0.0" />
+    </dependencies>
+    <id>ClassLibrary.ru-ru</id>
+    <title />
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Российские ресурсы для ClassLibrary</description>
+    <summary />
+    <language>ru-RU</language>
+  </metadata>
+  <files>
+    <file src="bin\Debug\ru-ru\ClassLibrary.resources.dll" target="lib\net40\ru-ru\ClassLibrary.resources.dll" />
+    <file src="ru-ru\ClassLibrary.XML" target="lib\net40\ru-ru\ClassLibrary.XML" />
+  </files>
+</package>

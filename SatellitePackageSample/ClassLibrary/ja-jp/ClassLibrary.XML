@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ClassLibrary</name>
+    </assembly>
+    <members>
+        <member name="T:ClassLibrary.Strings">
+            <summary>
+            公開するクラス文字列は、1 つは、常に英語とローカライズ可能な。
+            </summary>
+        </member>
+        <member name="P:ClassLibrary.Strings.AlwaysEnglish">
+            <summary>
+            常に英語で表示される文字列を取得します。
+            </summary>
+        </member>
+        <member name="P:ClassLibrary.Strings.Localizable">
+            <summary>
+            デフォルトで英語がローカライズ可能な文字列を取得します。
+            </summary>
+        </member>
+    </members>
+</doc>

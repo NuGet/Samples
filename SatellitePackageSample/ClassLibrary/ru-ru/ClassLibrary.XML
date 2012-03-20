@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ClassLibrary</name>
+    </assembly>
+    <members>
+        <member name="T:ClassLibrary.Strings">
+            <summary>
+            Класс, который предоставляет строки, один всегда английский и другой локализуемые.
+            </summary>
+        </member>
+        <member name="P:ClassLibrary.Strings.AlwaysEnglish">
+            <summary>
+            Получает строку, которая всегда отображается на английском языке.
+            </summary>
+        </member>
+        <member name="P:ClassLibrary.Strings.Localizable">
+            <summary>
+            Получает строку, локализуемые но английский язык, по умолчанию.
+            </summary>
+        </member>
+    </members>
+</doc>

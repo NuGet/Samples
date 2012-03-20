@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <version>1.0.0</version>
+    <authors>jeffhandley</authors>
+    <owners />
+    <id>ClassLibrary</id>
+    <title />
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A class library for testing localization.</description>
+    <language>en-US</language>
+  </metadata>
+  <files>
+    <file src="bin\Debug\ClassLibrary.dll" target="lib\net40\ClassLibrary.dll" />
+    <file src="bin\Debug\ClassLibrary.XML" target="lib\net40\ClassLibrary.XML" />
+  </files>
+</package>

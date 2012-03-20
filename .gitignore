@@ -1,0 +1,9 @@
+[Oo]bj/
+[Bb]in/
+*.suo
+*.user
+*.docstates
+_ReSharper.*
+*.csproj.user
+SatellitePackageSample/packages/*
+*.nupkg
