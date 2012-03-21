@@ -57,6 +57,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Resources.ru-ru.resx" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassLibrary.ja-jp.nuspec" />
+    <None Include="ClassLibrary.Localization.nuspec" />
+    <None Include="ClassLibrary.nuspec" />
+    <None Include="ClassLibrary.ru-ru.nuspec" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ja-jp\ClassLibrary.XML" />
+    <Content Include="ru-ru\ClassLibrary.XML" />
+    <Content Include="Runtime.txt" />
+    <Content Include="Satellite.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -13,5 +13,6 @@
   <files>
     <file src="bin\Debug\ClassLibrary.dll" target="lib\net40\ClassLibrary.dll" />
     <file src="bin\Debug\ClassLibrary.XML" target="lib\net40\ClassLibrary.XML" />
+    <file src="Runtime.txt" target="content\file.txt" />
   </files>
 </package>

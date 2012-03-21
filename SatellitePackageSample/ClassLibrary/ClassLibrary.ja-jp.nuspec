@@ -17,5 +17,9 @@
   <files>
     <file src="bin\Debug\ja-jp\ClassLibrary.resources.dll" target="lib\net40\ja-jp\ClassLibrary.resources.dll" />
     <file src="ja-jp\ClassLibrary.XML" target="lib\net40\ja-jp\ClassLibrary.XML" />
+      
+    <!-- These files will not get copied into the runtime folder because they're not in a lib\*\ja-jp folder -->
+    <file src="Satellite.txt" target="content\file.txt" />
+    <file src="Satellite.txt" target="lib\net40\Japanese.txt" />
   </files>
 </package>
