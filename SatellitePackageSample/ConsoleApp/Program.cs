@@ -13,7 +13,7 @@ namespace ConsoleApp
         {
             Console.OutputEncoding = UnicodeEncoding.UTF8;
 
-            foreach (var culture in new[] { "en-us", "ja-jp", "ru-ru" })
+            foreach (var culture in new[] { "en-us", "ja-jp", "ru-ru", "cs-cz" })
             {
                 Thread.CurrentThread.CurrentUICulture = new CultureInfo(culture);
                 Console.WriteLine("Current Culture: " + Thread.CurrentThread.CurrentUICulture.EnglishName);

@@ -10,6 +10,7 @@ REM Build the NuGet packages from ClassLibrary
 %nuget% pack SatellitePackageSample\ClassLibrary\ClassLibrary.nuspec
 %nuget% pack SatellitePackageSample\ClassLibrary\ClassLibrary.ja-jp.nuspec
 %nuget% pack SatellitePackageSample\ClassLibrary\ClassLibrary.ru-ru.nuspec
+%nuget% pack SatellitePackageSample\ClassLibrary\ClassLibrary.cs.nuspec
 %nuget% pack SatellitePackageSample\ClassLibrary\ClassLibrary.Localization.nuspec
 
 REM Make those packages available through a new feed source called SatellitePackageSample

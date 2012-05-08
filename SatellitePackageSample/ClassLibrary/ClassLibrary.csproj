@@ -50,6 +50,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Resources.cs.resx" />
     <EmbeddedResource Include="Resources.ja-jp.resx" />
     <EmbeddedResource Include="Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -62,6 +63,7 @@
     <None Include="ClassLibrary.Localization.nuspec" />
     <None Include="ClassLibrary.nuspec" />
     <None Include="ClassLibrary.ru-ru.nuspec" />
+    <None Include="ClassLibrary.cs.nuspec" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="ja-jp\ClassLibrary.XML" />

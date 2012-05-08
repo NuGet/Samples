@@ -7,6 +7,7 @@
     <dependencies>
       <dependency id="ClassLibrary.ja-jp" version="1.0.0" />
       <dependency id="ClassLibrary.ru-ru" version="1.0.0" />
+      <dependency id="ClassLibrary.cs" version="1.0.0" />
     </dependencies>
     <id>ClassLibrary.Localization</id>
     <title />
