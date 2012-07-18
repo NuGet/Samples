@@ -5,7 +5,7 @@
     <authors>jeffhandley</authors>
     <owners />
     <dependencies>
-      <dependency id="ClassLibrary" version="1.0.0" />
+      <dependency id="ClassLibrary" version="[1.0.0]" />
     </dependencies>
     <id>ClassLibrary.ja-jp</id>
     <title />
