@@ -18,6 +18,5 @@
   <References />
   <Content>
     <CustomExtension Type="jQuery.1.6.1.nupkg">Packages\jQuery.1.6.1.nupkg</CustomExtension>
-    <CustomExtension Type="jQuery.Validation.1.10.0.nupkg">Packages\jQuery.Validation.1.10.0.nupkg</CustomExtension>
   </Content>
 </Vsix>
