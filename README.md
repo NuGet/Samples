@@ -2,19 +2,21 @@
 
 This repo contains NuGet sample packages.
 
-1. `ConsoleApp` - This console application will set the current UI culture to English, Japanese, and Russian, and output a string from `ClassLibrary`
+1. `Satellite-Packages/ConsoleApp` - This console application will set the current UI culture to English, Japanese, and Russian, and output a string from `ClassLibrary`
 
-2. `ClassLibrary` - This "localized" class library project exposes string properties for consumption within `ConsoleApp`.
+2. `Satellite-Packages/ClassLibrary` - This "localized" class library project exposes string properties for consumption within `ConsoleApp`.
 
-3. `ClassLibrary.nuspec` - The spec for creating the `ClassLibrary` runtime package
+3. `Satellite-Packages/ClassLibrary/ClassLibrary.nuspec` - The spec for creating the `ClassLibrary` runtime package
 
-4. `ClassLibrary.ja-jp.nuspec` - The spec for creating the `ClassLibrary.ja-jp` satellite package
+4. `Satellite-Packages/ClassLibrary/ClassLibrary.ja-jp.nuspec` - The spec for creating the `ClassLibrary.ja-jp` satellite package
 
-5. `ClassLibrary.ru-ru.nuspec` - The spec for creating the `ClassLibrary.ru-ru` satellite package
+5. `Satellite-Packages/ClassLibrary/ClassLibrary.ru-ru.nuspec` - The spec for creating the `ClassLibrary.ru-ru` satellite package
 
-6. `ClassLibrary.Localization.nuspec` - The meta package that pulls in both `ClassLibrary.ja-jp` and `ClassLibrary.ru-ru`
+6. `Satellite-Packages/ClassLibrary/ClassLibrary.Localization.nuspec` - The meta package that pulls in both `ClassLibrary.ja-jp` and `ClassLibrary.ru-ru`
 
-`ConsoleApp` has a NuGet package reference to `ClassLibrary`. By adding a package reference to `ClassLibrary.ja-jp`, `ClassLibrary.ru-ru`, or `ClassLibrary.Localization`, the output of the console application will change to include localized strings.
+    `Satellite-Packages/ConsoleApp` has a NuGet package reference to `Satellite-Packages/ClassLibrary`. By adding a package reference to `ClassLibrary.ja-jp`, `ClassLibrary.ru-ru`, or `ClassLibrary.Localization`, the output of the console application will change to include localized strings.
+
+7.  `ContentFilesExample` is a sample package and project that demonstrates how to use the contentFiles feature in NuGet 3.3+
 
 ## Documentation and Further Learning
 
@@ -24,6 +26,7 @@ The [NuGet Docs](http://docs.nuget.org) cover creating NuGet packages in more de
 * [Creating and Publishing a Symbol Package](http://docs.nuget.org/Create/Creating-and-Publishing-a-Symbol-Package)
 * [Creating Localized Packages](http://docs.nuget.org/Create/Creating-Localized-Packages)
 * [Configuration File and Source Code Transformations](http://docs.nuget.org/Create/Configuration-File-and-Source-Code-Transformations)
+* [ContentFiles in NuGet 3.3 and Visual Studio 2015 Update 1 and Later](http://docs.nuget.org/Create/NuSpec-Reference#contentfiles-with-visual-studio-2015-update-1-and-later)
 
 ## Feedback
 
