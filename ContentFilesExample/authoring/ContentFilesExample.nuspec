@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package>
+  <metadata minClientVersion="3.3.0">
+    <id>ContentFilesExample</id>
+    <version>1.0.0</version>
+    <authors>nuget</authors>
+    <owners>nuget</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A content v2 example package.</description>
+    <tags>contentv2 contentFiles</tags>
+    <!-- Build actions for items in the contentFiles folder -->
+    <contentFiles>
+        <!-- Include Assets as Content -->
+        <files include="**/images/*.*" buildAction="Content" />
+        <files include="**/data.txt" buildAction="Content" />
+        <!-- Copy tool scripts to the output folder -->
+        <files include="**/tools/*" buildAction="None" flatten="false" copyToOutput="true" />
+    </contentFiles>
+  </metadata>
+</package>
