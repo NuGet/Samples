@@ -7,3 +7,4 @@ _ReSharper.*
 *.csproj.user
 SatellitePackageSample/packages/*
 *.nupkg
+VsCredentialProvider/packages/
