@@ -2,6 +2,8 @@
 
 This repo contains NuGet sample packages.
 
+This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+
 1. `Satellite-Packages/ConsoleApp` - This console application will set the current UI culture to English, Japanese, and Russian, and output a string from `ClassLibrary`
 
 2. `Satellite-Packages/ClassLibrary` - This "localized" class library project exposes string properties for consumption within `ConsoleApp`.
