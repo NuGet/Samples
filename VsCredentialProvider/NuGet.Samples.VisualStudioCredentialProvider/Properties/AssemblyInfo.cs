@@ -1,11 +1,11 @@
 ﻿using System.Reflection;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyTitle("Sample.VisualStudio.CredentialProvider")]
+[assembly: AssemblyTitle("NuGet.Samples.VisualStudioCredentialProvider")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Sample.VisualStudio.CredentialProvider")]
+[assembly: AssemblyProduct("NuGet.Samples.VisualStudioCredentialProvider")]
 [assembly: AssemblyCopyright("")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

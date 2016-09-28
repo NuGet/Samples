@@ -2,7 +2,7 @@ using System;
 using System.Net;
 using System.Security;
 
-namespace Sample.VisualStudio.CredentialProvider
+namespace NuGet.Samples.VisualStudioCredentialProvider
 {
     public sealed class SampleCredentials
         : ICredentials

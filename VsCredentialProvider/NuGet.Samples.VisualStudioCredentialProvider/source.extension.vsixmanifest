@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
-    <Identity Id="Sample.VisualStudio.CredentialProvider.NuGet.EFFA9532-96B6-42F3-8B5F-DE775F5049C2" Version="1.0" Language="en-US" Publisher="NuGet" />
-    <DisplayName>Sample.VisualStudio.CredentialProvider</DisplayName>
+    <Identity Id="NuGet.Samples.VisualStudioCredentialProvider.NuGet.EFFA9532-96B6-42F3-8B5F-DE775F5049C2" Version="1.0" Language="en-US" Publisher="NuGet" />
+    <DisplayName>NuGet.Samples.VisualStudioCredentialProvider</DisplayName>
     <Description xml:space="preserve">Sample NuGet Credential Provider for Visual Studio</Description>
   </Metadata>
   <Installation>

@@ -8,7 +8,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using NuGet.VisualStudio;
 
-namespace Sample.VisualStudio.CredentialProvider
+namespace NuGet.Samples.VisualStudioCredentialProvider
 {
 
     [Export(typeof(IVsCredentialProvider))]
