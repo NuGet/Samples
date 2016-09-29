@@ -10,10 +10,16 @@ using NuGet.VisualStudio;
 
 namespace NuGet.Samples.VisualStudioCredentialProvider
 {
+    // This is a sample credential provider to demonstrate implementing your own NuGet Credential Provider for NuGet.
+    // This sample does not actually authenticate against any endpoint and just returns dummy results.
     [Export(typeof(IVsCredentialProvider))]
     public sealed class SampleCredentialProvider
         : IVsCredentialProvider
     {
+        // As an example, this sample credential provider only supports www.nuget.org domain name.
+        // When implementing your own provider, change this to the specific domain name you want to support.
+        private const string _supportedTargetHost = "www.nuget.org";
+
         /// <summary>
         /// Get credentials for the supplied package source Uri.
         /// </summary>
@@ -67,6 +73,13 @@ namespace NuGet.Samples.VisualStudioCredentialProvider
             // This should be enforced HTTPS by now.
             // If not, the endpoint protocol is not supported by this sample credential provider.
             if (!string.Equals(uri.Scheme, Uri.UriSchemeHttps, StringComparison.InvariantCultureIgnoreCase))
+            {
+                return null;
+            }
+
+            // Check if the target host is supported by this credential provider.
+            // All credential providers must validate they support the target Uri before actually doing any authentication!
+            if (!string.Equals(uri.Host, _supportedTargetHost, StringComparison.OrdinalIgnoreCase))
             {
                 return null;
             }
