@@ -10,6 +10,4 @@
 
 6. `Satellite-Packages/ClassLibrary/ClassLibrary.Localization.nuspec` - The meta package that pulls in both `ClassLibrary.ja-jp` and `ClassLibrary.ru-ru`
 
-    `Satellite-Packages/ConsoleApp` has a NuGet package reference to `Satellite-Packages/ClassLibrary`. By adding a package reference to `ClassLibrary.ja-jp`, `ClassLibrary.ru-ru`, or `ClassLibrary.Localization`, the output of the console application will change to include localized strings.
-
-7.  `ContentFilesExample` is a sample package and project that demonstrates how to use the contentFiles feature in NuGet 3.3+
+7. `Satellite-Packages/ConsoleApp` has a NuGet package reference to `Satellite-Packages/ClassLibrary`. By adding a package reference to `ClassLibrary.ja-jp`, `ClassLibrary.ru-ru`, or `ClassLibrary.Localization`, the output of the console application will change to include localized strings.
