@@ -89,9 +89,9 @@ Assuming, the build task library is called UWPVersionCheck.dll and the targets f
 A design.dll allows you to make control properties editable from the property inspector, add custom adorners, etc. To add this support, place the design.dll inside the Design folder.
 
 	\build
+	\lib
 		\uap
 			\Design
 				\MyControl.design.dll
-				
-	\lib
+			\Themes		
 	\tools
