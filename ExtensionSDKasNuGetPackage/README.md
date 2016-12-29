@@ -46,11 +46,13 @@ UAP packages have a TargetPlatformVersion(TPV) and TargetPlatformMinVersion(TPM)
 When authoring a UAP package, be cognizant of these properties while designing and coding your libraries. Using API's outside of the bounds of the platform versions defined in the app will either cause the build to fail or the app to fail at runtime.
 
 For example, you have tested your controls and want your control library to be consumed by projects where
-TPV = Windows 10 Anniversary Edition (10.0; Build 14393) and 
-TPM = Windows 10 (10.0; Build 10586)
+* TargetPlatformVersion(TPV) = Windows 10 Anniversary Edition (10.0; Build 14393) and 
+* TargetPlatformMinVersion(TPM) = Windows 10 (10.0; Build 10586)
+
+Below, we talk about how to ensure that your control library is consumed only by UAP projects that fall within the bounds of our example.
 
 ### TargetPlatformVersion(TPV) check
-To allow NuGet to perfrom the TPV check, you must package the controls as follows:
+To enforce TPV check, you must package the controls as follows:
 
     \lib\uap10.0.14393.0\*
     \ref\uap10.0.14393.0\*
