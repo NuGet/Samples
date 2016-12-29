@@ -6,6 +6,13 @@ Specifically, this sample will cover how to:
 * [Add Toolbox support](#add-toolbox-support)
 * [Support specific platform versions](#support-specific-platform-versions)
 * [Add Design Time support](#add-design-time-support)
+* Use strings/Resources
+* Pacakge content such as images, etc.
+
+To build the nuget packages:
+1. Batch build the solution for all `Release` configurations
+2. From command prompt, navigate to `/ExtensionSDKasNuGetPackage/ManagedPackage/` (managed controls) or `ExtensionSDKasNuGetPackage/NativePackage` (native controls)
+3. Execute `nuget pack ManagedPackage.nuspec` or `nuget pack NativePackage.nuspec`
 
 
 ## Add Toolbox support
@@ -35,26 +42,20 @@ Here is a sample of VisualStudioToolsManifest.xml.
 UAP packages have a TargetPlatformVersion(TPV) and TargetPlatformMinVersion(TPM) that defines the upper and lower bounds of the OS version where the app can be installed into. TPV further specifies the version of the SDK that the app is compiled against.
 
 When authoring a UAP package, be cognizant of these properties while designing and coding your libraries. Using API's outside of the bounds of the platform versions defined in the app will either cause the build to fail or the app to fail at runtime.
-Some examples of possible combinations of TPV and TPM are given below.
 
-Target Platform Version	| Target Platform Minimum Version
-------------------------|--------------------------------
-14393|14393
-14393|10586
-14393|10240
-10586|10586
-10586|10240
-10240|10240
+For example, you have tested your controls and want your control library to be consumed by projects where
+TPV = Windows 10 Anniversary Edition (10.0; Build 14393) and 
+TPM = Windows 10 (10.0; Build 10586)
 
+### TargetPlatformVersion(TPV) check
+To allow NuGet to perfrom the TPV check, you must package the controls as follows:
 
-###TargetPlatformVersion(TPV)
-For example, if you want to target version 10586 of the SDK and above, you can name the folder as following:
+    \lib\uap10.0.14393.0\*
+    \ref\uap10.0.14393.0\*
 
-    \lib\uap10.0.10586.0\*
-    \ref\uap10.0.10586.0\*
-
-This nuget package will be applicable to all projects where TPV >= 10.0.10586.0.
+This nuget package will be applicable to all projects where TPV >= 10.0.14393.0.
 Note: `ref` is given here for completeness and is only required if you have a reference assembly that is used to compile the app and there is a different implementation assembly in lib that is copied into the application output.
+
 If you need to specify multiple versions of the assembly targeting specific versions of the SDK, you can do that by creating multiple libraries targeting specific versions of the OS. For example:
 
     \lib\uap10.0.14393.0\*
@@ -62,10 +63,13 @@ If you need to specify multiple versions of the assembly targeting specific vers
     \ref\uap10.0.14393.0\*
     \ref\uap10.0.10586.0\*
 
+In this case, the correct version of the assembly will be selected based on the consuming project's TPV. If the consuming project's TPV is higher than all available assemblies, the highest version of the assemnly will be selected.
 
-###TargetPlatformMinVersion(TPM)
-To enforce TPM check, you can write a build task that checks the TargetPlatformMinVersion at build time and causes the build to fail if the TPM is lower than one supported by your library. 
-Package the build task and author a targets file. For example, the targets file will look like:
+Note: `\lib\uap10.0` will continue to work. However, there will be no TPV check and the package can be consumed by a UAP project irrespective of its TPV. 
+
+###TargetPlatformMinVersion(TPM) check
+To enforce TPM check, you can write a build task that checks the TargetPlatformMinVersion at build time and causes the build to fail if the TPM is lower than the one supported by your library. 
+Package the build task and author a targets file. For the above example, the targets file will look like:
 
 	<?xml version="1.0" encoding="utf-8"?>
 	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
