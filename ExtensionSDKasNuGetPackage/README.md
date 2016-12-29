@@ -10,10 +10,12 @@ Specifically, this sample will cover how to:
 * Pacakge content such as images, etc.
 
 To build the nuget packages:
+
 1. Batch build the solution for all `Release` configurations
 2. From command prompt, navigate to `/ExtensionSDKasNuGetPackage/ManagedPackage/` (managed controls) or `ExtensionSDKasNuGetPackage/NativePackage` (native controls)
 3. Execute `nuget pack ManagedPackage.nuspec` or `nuget pack NativePackage.nuspec`
 
+This will generate a `nupkg` and place it in the same directory as the `nuspec`.
 
 ## Add Toolbox support
 
