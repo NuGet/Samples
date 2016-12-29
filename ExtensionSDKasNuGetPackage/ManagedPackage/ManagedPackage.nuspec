@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>MyManagedPackage</id>
+    <version>1.0.0</version>
+    <title>MyManagedPackage</title>
+    <authors>Contoso Controls</authors>
+    <owners>Contoso Controls</owners>
+    <licenseUrl>http://LICENSE_URL_HERE_OR_DELETE_THIS_LINE</licenseUrl>
+    <projectUrl>http://PROJECT_URL_HERE_OR_DELETE_THIS_LINE</projectUrl>
+    <iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Contains MyUserControl and MyCustomControl</description>
+    <releaseNotes>Sample release notes</releaseNotes>
+    <copyright>Copyright 2016</copyright>
+    <tags>managed controls</tags>
+  </metadata>
+  <files>
+    <file src="Targets\uap\MyManagedControl.targets" target="build\uap"/>
+    <file src="..\UWPVersionCheck\bin\Release\netstandard1.4\UWPVersionCheck.dll" target="build\uap"/>
+    <file src="Targets\native\MyManagedControl.targets" target="build\native"/>
+    <file src="..\UWPVersionCheck\bin\Release\netstandard1.4\UWPVersionCheck.dll" target="build\native"/>
+    <file src="Themes\Generic.xaml" target="lib\uap10.0.14393.0\Themes"/>
+    <file src="..\ManagedPackage.Design\bin\Release\ManagedPackage.Design.dll" target="lib\uap10.0.14393.0\Design"/>
+    <file src="bin\x86\Release\ManagedPackage.pri" target="lib\uap10.0.14393.0"/>
+    <file src="bin\x86\Release\ManagedPackage.winmd" target="lib\uap10.0.14393.0"/>
+    <file src="bin\x86\Release\ManagedPackage.xr.xml" target="lib\uap10.0.14393.0"/>
+    <file src="bin\x86\Debug\ManagedPackage.XML" target="lib\uap10.0.14393.0"/>
+    <file src="bin\x86\Release\ManagedPackage.xr.xml" target="lib\uap10.0.14393.0\ManagedPackage"/>
+    <file src="MyUserControl.xaml" target="lib\uap10.0.14393.0"/>
+    <file src="VisualStudioToolsManifest.xml" target="tools"/>
+  </files>
+</package>

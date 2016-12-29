@@ -1,0 +1,9 @@
+﻿<FileList
+  MinVSVersion = "14.0">
+  <File Reference = "MyNativeControl.winmd" Implementation = "MyNativeControl.dll">
+    <ToolboxItems VSCategory="Graph">
+    </ToolboxItems>
+    <ToolboxItems BlendCategory="Controls/sample/Graph">
+    </ToolboxItems>
+  </File>
+</FileList>

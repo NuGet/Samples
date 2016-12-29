@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <UsingTask TaskName="VersionCheckTask"
+    AssemblyFile = "UWPVersionCheck.dll"/>
+   <ItemGroup Condition="'$(TargetPlatformIdentifier)' == 'UAP'">
+   	<Content Include="$(MSBuildThisFileDirectory)..\..\lib\uap\time_zones_4.jpg">
+       		<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+   	</Content>
+    </ItemGroup>
+  <Target Name="BeforeBuild">
+	<VersionCheckTask MinVersionSupported="10.0.10586.0" TargetMinVersion="$(TargetPlatformMinVersion)"/>
+  </Target>
+</Project>

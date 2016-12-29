@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resources">
+      <UniqueIdentifier>3b7bb38c-f095-4702-8452-a001719e73ed</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tga;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="pch.cpp" />
+    <ClCompile Include="MyCustomControl.cpp" />
+    <ClCompile Include="MyClass.cpp" />
+    <ClCompile Include="MyUserControl.xaml.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="MyCustomControl.h" />
+    <ClInclude Include="MyClass.h" />
+    <ClInclude Include="MyUserControl.xaml.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Themes\Generic.xaml" />
+    <Page Include="MyUserControl.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Resources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="time_zones_4.jpg">
+      <Filter>Resources</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NativePackage.nuspec" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="VisualStudioToolsManifest.xml" />
+  </ItemGroup>
+</Project>
