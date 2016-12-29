@@ -1,4 +1,4 @@
-
+	
 # Extension SDKs as NuGet Package Sample
 Provides an end-to-end sample to show how to package UWP XAML controls as a NuGet package. 
 
@@ -15,7 +15,7 @@ To enable controls to show up in the toolbox, create a VisualStudioToolsManifest
     \build
     \lib
     \tools
-	\VisualStudioToolsManifest.xml
+		\VisualStudioToolsManifest.xml
 
 VisualStudioToolsManifest is only required to specify metadata used by the XAML designer tools in Visual Studio and only if you are shipping controls. 
 Here is a sample of VisualStudioToolsManifest.xml. 
