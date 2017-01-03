@@ -6,7 +6,7 @@ Specifically, this sample will cover how to:
 * [Add Toolbox support](#add-toolbox-support)
 * [Support specific Windows platform versions](#support-specific-platform-versions)
 * [Add design time support](#add-design-time-support)
-* [Use strings/resources](#use-strings/resources)
+* [Use strings/resources](#use-strings-resources)
 * [Package content such as images](#package-content-such-as-images)
 
 To build the nuget package samples:
