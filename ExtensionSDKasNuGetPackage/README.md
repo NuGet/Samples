@@ -6,7 +6,7 @@ Specifically, this sample will cover how to:
 * [Add Toolbox support](#add-toolbox-support)
 * [Support specific Windows platform versions](#support-specific-platform-versions)
 * [Add design time support](#add-design-time-support)
-* [Use strings/resources](#use-strings-resources)
+* [Use strings and resources](#use-strings-and-resources)
 * [Package content such as images](#package-content-such-as-images)
 
 To build the nuget package samples:
@@ -104,7 +104,7 @@ A design.dll allows you to make control properties editable from the property in
 	\tools
 
 
-## Use strings/resources
+## Use strings and resources
 You can embed string resources (.resw) in your package that are either consumed by your control or by the consuming UWP project. You can do that by setting the `Build Action` property of the `.resw` file to `PRIResource`.
 
 Look at [MyCustomControl.cs](https://github.com/NuGet/Samples/blob/master/ExtensionSDKasNuGetPackage/ManagedPackage/MyCustomControl.cs) for a sample implementation.
