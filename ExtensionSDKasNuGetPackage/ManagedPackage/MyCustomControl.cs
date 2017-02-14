@@ -17,7 +17,7 @@ namespace ManagedPackage
 {
     public sealed class MyCustomControl : Control
     {
-        internal string MyString
+        public string MyString
         {
             get { return (string)GetValue(MyStringProperty); }
             set { SetValue(MyStringProperty, value); }
@@ -29,6 +29,7 @@ namespace ManagedPackage
 
 
 
+     
         public MyCustomControl()
         {
             this.DefaultStyleKey = typeof(MyCustomControl);
