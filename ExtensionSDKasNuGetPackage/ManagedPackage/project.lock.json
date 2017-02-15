@@ -15609,9 +15609,42 @@
     ],
     "UAP,Version=v10.0": []
   },
-  "tools": {},
-  "projectFileToolGroups": {},
   "packageFolders": {
     "C:\\Users\\karann\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "restore": {
+      "projectUniqueName": "C:\\Users\\karann\\Documents\\GitHub\\Samples\\ExtensionSDKasNuGetPackage\\ManagedPackage\\ManagedPackage.csproj",
+      "projectName": "ManagedPackage",
+      "projectPath": "C:\\Users\\karann\\Documents\\GitHub\\Samples\\ExtensionSDKasNuGetPackage\\ManagedPackage\\ManagedPackage.csproj",
+      "projectJsonPath": "C:\\Users\\karann\\Documents\\GitHub\\Samples\\ExtensionSDKasNuGetPackage\\ManagedPackage\\project.json",
+      "projectStyle": "ProjectJson"
+    },
+    "dependencies": {
+      "Microsoft.NETCore.UniversalWindowsPlatform": "5.1.0"
+    },
+    "frameworks": {
+      "uap10.0": {}
+    },
+    "runtimes": {
+      "win10-arm": {
+        "#import": []
+      },
+      "win10-arm-aot": {
+        "#import": []
+      },
+      "win10-x64": {
+        "#import": []
+      },
+      "win10-x64-aot": {
+        "#import": []
+      },
+      "win10-x86": {
+        "#import": []
+      },
+      "win10-x86-aot": {
+        "#import": []
+      }
+    }
   }
 }

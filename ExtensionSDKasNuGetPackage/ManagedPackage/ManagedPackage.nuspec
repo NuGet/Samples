@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>MyManagedPackage</id>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <title>MyManagedPackage</title>
     <authors>Contoso Controls</authors>
     <owners>Contoso Controls</owners>
@@ -16,20 +16,20 @@
     <tags>managed controls</tags>
   </metadata>
   <files>
-    <file src="Targets\uap\MyManagedPackage.targets" target="build\uap"/>
-    <file src="..\UWPVersionCheck\bin\Release\netstandard1.4\UWPVersionCheck.dll" target="build\uap"/>
+    <file src="Targets\uap\MyManagedPackage.targets" target="build\uap10.0.14393"/>
+    <file src="..\UWPVersionCheck\bin\Release\netstandard1.4\UWPVersionCheck.dll" target="build\uap10.0.14393"/>
     <file src="Targets\native\MyManagedPackage.targets" target="build\native"/>
     <file src="..\UWPVersionCheck\bin\Release\netstandard1.4\UWPVersionCheck.dll" target="build\native"/>
-    <file src="Themes\Generic.xaml" target="lib\uap10.0.14393.0\Themes"/>
-    <file src="..\ManagedPackage.Design\bin\Release\ManagedPackage.Design.dll" target="lib\uap10.0.14393.0\Design"/>
-    <file src="bin\x86\Release\ManagedPackage.pri" target="lib\uap10.0.14393.0"/>
-    <file src="bin\x86\Release\ManagedPackage.winmd" target="lib\uap10.0.14393.0"/>
-    <file src="bin\x86\Release\ManagedPackage.xr.xml" target="lib\uap10.0.14393.0"/>
-    <file src="bin\x86\Debug\ManagedPackage.XML" target="lib\uap10.0.14393.0"/>
-    <file src="time_zones_4.jpg" target="lib\uap10.0.14393.0"/>
-    <file src="bin\x86\Release\ManagedPackage.xr.xml" target="lib\uap10.0.14393.0\ManagedPackage"/>
-    <file src="MyUserControl.xaml" target="lib\uap10.0.14393.0"/>
+    <file src="Themes\Generic.xaml" target="lib\uap10.0.14393\Themes"/>
+    <file src="..\ManagedPackage.Design\bin\Release\ManagedPackage.Design.dll" target="lib\uap10.0.14393.\Design"/>
+    <file src="bin\x86\Release\ManagedPackage.pri" target="lib\uap10.0.14393"/>
+    <file src="bin\x86\Release\ManagedPackage.winmd" target="lib\uap10.0.14393"/>
+    <file src="bin\x86\Release\ManagedPackage.xr.xml" target="lib\uap10.0.14393"/>
+    <file src="bin\Release\ManagedPackage.XML" target="lib\uap10.0.14393"/>
+    <file src="time_zones_4.jpg" target="lib\uap10.0.14393"/>
+    <file src="bin\x86\Release\ManagedPackage.xr.xml" target="lib\uap10.0.14393\ManagedPackage"/>
+    <file src="MyUserControl.xaml" target="lib\uap10.0.14393"/>
     <file src="VisualStudioToolsManifest.xml" target="tools"/>
-    <file src="VisualStudioToolsManifest.xml" target="lib\uap10.0.14393.0\ManagedPackage"/>
+    <file src="VisualStudioToolsManifest.xml" target="lib\uap10.0.14393\ManagedPackage"/>
   </files>
 </package>
