@@ -10,7 +10,7 @@
             <Implementation>NativePackage.dll</Implementation>
         </Reference>
     <ReferenceCopyLocalPaths Include="$(MSBuildThisFileDirectory)..\..\runtimes\win10-$(NativePackage-Platform)\native\NativePackage.dll" />
-   <Image Include="$(MSBuildThisFileDirectory)..\..\lib\uap\time_zones_4.jpg"/>
+   <Image Include="$(MSBuildThisFileDirectory)..\..\lib\uap10.0.14393\NativePackage\time_zones_4.jpg"/>
     </ItemGroup>
  <ItemDefinitionGroup Condition="'$(TargetPlatformIdentifier)' == 'UAP'">
     <ClCompile>

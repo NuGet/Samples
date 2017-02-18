@@ -10,9 +10,9 @@
   		<Implementation>ManagedPackage.winmd</Implementation>
 	</Reference>
   	<Image Include="$(MSBuildThisFileDirectory)..\..\lib\uap10.0.14393\time_zones_4.jpg"/>
-	<ReferenceCopyLocalPaths Include="$(MSBuildThisFileDirectory)..\..\lib\uap\ManagedPackage.winmd" />
+	<ReferenceCopyLocalPaths Include="$(MSBuildThisFileDirectory)..\..\lib\uap10.0.14393\ManagedPackage.winmd" />
     </ItemGroup>
- <Target Name="Build">
+ <Target Name="BeforeBuild">
 	<VersionCheckTask MinVersionSupported="10.0.10586.0" TargetMinVersion="$(TargetPlatformMinVersion)"/>
   </Target>
 </Project>
