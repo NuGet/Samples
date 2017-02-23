@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>MyManagedPackage</id>
-    <version>1.0.3</version>
+    <version>1.0.4</version>
     <title>MyManagedPackage</title>
     <authors>Contoso Controls</authors>
     <owners>Contoso Controls</owners>
