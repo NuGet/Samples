@@ -4,9 +4,15 @@ This repo contains NuGet sample packages.
 
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
-1. `Satellite-Packages` is a sample class library and console app that demonstrates how to localize your NuGet packege using the Sattelite Package feature.
+1. [ExtensionSDKasNuGetPackage](ExtensionSDKasNuGetPackage) is a sample solution that walks you through several scenarios for shipping an extension SDK as nuget package
 
-2.  `ContentFilesExample` is a sample package and project that demonstrates how to use the contentFiles feature in NuGet 3.3+
+1. [VsCredentialProvider](VsCredentialProvider) is a sample for creating a NuGet credential provider for Visual Studio
+
+1. [Satellite-Packages](Satellite-Packages) is a sample class library and console app that demonstrates how to localize your NuGet packege using the Sattelite Package feature.
+
+1. [PackageReferenceProjects](PackageReferenceProjects) demonstrates how you can manually migrate to the new PackageReference format.
+
+1.  [ContentFilesExample](ContentFilesExample) is a sample package and project that demonstrates how to use the contentFiles feature in NuGet 3.3+
 
 ## Documentation and Further Learning
 
