@@ -18,11 +18,12 @@ This project has adopted the [Microsoft Open Source Code of Conduct](https://ope
 
 The [NuGet Docs](http://docs.nuget.org) cover creating NuGet packages in more detail:
 
-* [Create NuGet packages](http://docs.nuget.org/create)
+* [Create NuGet packages](https://docs.microsoft.com/en-us/nuget/quickstart/create-and-publish-a-package)
 * [Creating and Publishing a Symbol Package](http://docs.nuget.org/Create/Creating-and-Publishing-a-Symbol-Package)
 * [Creating Localized Packages](http://docs.nuget.org/Create/Creating-Localized-Packages)
 * [Configuration File and Source Code Transformations](http://docs.nuget.org/Create/Configuration-File-and-Source-Code-Transformations)
-* [ContentFiles in NuGet 3.3 and Visual Studio 2015 Update 1 and Later](http://docs.nuget.org/Create/NuSpec-Reference#contentfiles-with-visual-studio-2015-update-1-and-later)
+* [ContentFiles in NuGet 3.3 and Visual Studio 2015 Update 1 and Later](https://docs.microsoft.com/en-us/nuget/schema/nuspec#including-content-files)
+* [Preinstalled-Packages](Preinstalled-Packages) demonstrates how template authors can instruct NuGet to install the necessary packages, rather than individual libraries. Read more about [Packages in Visual Studio templates](https://docs.microsoft.com/en-us/nuget/visual-studio-extensibility/visual-studio-templates)
 
 ## Feedback
 
@@ -30,4 +31,4 @@ If you're having trouble with the NuGet.org Website, file a bug on the [NuGet Ga
 
 If you're having trouble with the NuGet client tools (the Visual Studio extension, NuGet.exe command line tool, etc.), file a bug on [NuGet Home](https://github.com/nuget/home/issues).
 
-Check out the [contributing](http://docs.nuget.org/contribute) page to see the best places to log issues and start discussions. The [NuGet Home](https://github.com/NuGet/Home) repo provides an overview of the different NuGet projects available.
+Check out the [contributing](https://github.com/NuGet/Home/wiki/Contribute-to-NuGet) page to see the best places to log issues and start discussions. The [NuGet Home](https://github.com/NuGet/Home) repo provides an overview of the different NuGet projects available.
