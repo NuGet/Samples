@@ -14,6 +14,8 @@ This project has adopted the [Microsoft Open Source Code of Conduct](https://ope
 
 1.  [ContentFilesExample](ContentFilesExample) is a sample package and project that demonstrates how to use the contentFiles feature in NuGet 3.3+
 
+1. [Preinstalled-Packages](Preinstalled-Packages) demonstrates how template authors can instruct NuGet to install the necessary packages, rather than individual libraries. Read more about [Packages in Visual Studio templates](https://docs.microsoft.com/en-us/nuget/visual-studio-extensibility/visual-studio-templates)
+
 ## Documentation and Further Learning
 
 The [NuGet Docs](http://docs.nuget.org) cover creating NuGet packages in more detail:
