@@ -3,7 +3,7 @@
     <UsingTask TaskName="VersionCheckTask"
     AssemblyFile = "UWPVersionCheck.dll"/>
    <ItemGroup Condition="'$(TargetPlatformIdentifier)' == 'UAP'">
-   	<Content Include="$(MSBuildThisFileDirectory)..\..\lib\uap10.0.14393\NativePackage\time_zones_4.jpg">
+   	<Content Include="$(MSBuildThisFileDirectory)..\..\lib\uap10.0.14393\time_zones_4.jpg">
        		<CopyToOutputDirectory>Always</CopyToOutputDirectory>
    	</Content>
     </ItemGroup>

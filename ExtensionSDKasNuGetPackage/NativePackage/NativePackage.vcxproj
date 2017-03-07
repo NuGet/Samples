@@ -239,13 +239,12 @@
     <PRIResource Include="Resources.resw" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="time_zones_4.jpg" />
+    <Image Include="time_zones_4.jpg">
+      <DeploymentContent>false</DeploymentContent>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <None Include="NativePackage.nuspec" />
-  </ItemGroup>
-  <ItemGroup>
-    <Xml Include="VisualStudioToolsManifest.xml" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />

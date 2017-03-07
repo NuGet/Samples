@@ -1,5 +1,9 @@
 [Oo]bj/
 [Bb]in/
+.vs/
+[Dd]ebug/
+[Rr]elease/
+Generated*/
 *.suo
 *.user
 *.docstates

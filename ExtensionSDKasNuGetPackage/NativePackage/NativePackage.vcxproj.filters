@@ -33,7 +33,4 @@
   <ItemGroup>
     <None Include="NativePackage.nuspec" />
   </ItemGroup>
-  <ItemGroup>
-    <Xml Include="VisualStudioToolsManifest.xml" />
-  </ItemGroup>
 </Project>

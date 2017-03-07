@@ -6,18 +6,19 @@
         <NativePackage-Platform Condition="'$(Platform)' != 'Win32'">$(Platform)</NativePackage-Platform>
     </PropertyGroup>
     <ItemGroup Condition="'$(TargetPlatformIdentifier)' == 'UAP'">
-        <Reference Include="$(MSBuildThisFileDirectory)..\..\lib\uap\NativePackage.winmd">
+        <Reference Include="$(MSBuildThisFileDirectory)..\..\lib\uap10.0.14393\NativePackage.winmd">
             <Implementation>NativePackage.dll</Implementation>
         </Reference>
-    <ReferenceCopyLocalPaths Include="$(MSBuildThisFileDirectory)..\..\runtimes\win10-$(NativePackage-Platform)\native\NativePackage.dll" />
-   <Image Include="$(MSBuildThisFileDirectory)..\..\lib\uap10.0.14393\NativePackage\time_zones_4.jpg"/>
+        <ReferenceCopyLocalPaths Include="$(MSBuildThisFileDirectory)..\..\runtimes\win10-$(NativePackage-Platform)\native\NativePackage\NativePackage.dll" />
+        <ReferenceCopyLocalPaths Include="$(MSBuildThisFileDirectory)..\..\runtimes\win10-$(NativePackage-Platform)\native\NativePackage\NativePackage.pri" />
+        <Image Include="$(MSBuildThisFileDirectory)..\..\lib\uap10.0.14393\time_zones_4.jpg"/>
     </ItemGroup>
- <ItemDefinitionGroup Condition="'$(TargetPlatformIdentifier)' == 'UAP'">
-    <ClCompile>
-      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)..\..\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-    </ClCompile>
-  </ItemDefinitionGroup>
- <Target Name="Build">
-	<VersionCheckTask MinVersionSupported="10.0.14393.0" TargetMinVersion="$(TargetPlatformMinVersion)"/>
-  </Target>
+    <ItemDefinitionGroup Condition="'$(TargetPlatformIdentifier)' == 'UAP'">
+        <ClCompile>
+        <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)..\..\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+        </ClCompile>
+    </ItemDefinitionGroup>
+    <Target Name="BeforeBuild">
+	    <VersionCheckTask MinVersionSupported="10.0.10586.0" TargetMinVersion="$(TargetPlatformMinVersion)"/>
+    </Target>
 </Project>
