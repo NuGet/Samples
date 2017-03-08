@@ -18,8 +18,14 @@ using Windows.UI.Xaml.Navigation;
 
 namespace ManagedPackage
 {
+    /// <summary>
+    /// MyUserControl
+    /// </summary>
     public sealed partial class MyUserControl : UserControl
     {
+        /// <summary>
+        /// Initialize MyUserControl
+        /// </summary>
         public MyUserControl()
         {
             this.InitializeComponent();

@@ -6,8 +6,14 @@ using System.Threading.Tasks;
 
 namespace ManagedPackage
 {
+    /// <summary>
+    /// MyClass
+    /// </summary>
     public sealed class MyClass
     {
+        /// <summary>
+        /// MyData
+        /// </summary>
         public string MyData
         {
             get;

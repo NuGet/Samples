@@ -1,4 +1,4 @@
-<FileList
+<FileList>
   <File Reference = "ManagedPackage.winmd" >
     <ToolboxItems VSCategory="Managed Package" BlendCategory="Managed Package">
       <Item Type="ManagedPackage.MyCustomControl" />

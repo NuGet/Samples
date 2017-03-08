@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>MyManagedPackage</id>
-    <version>1.0.5</version>
+    <version>1.0.9</version>
     <title>MyManagedPackage</title>
     <authors>Contoso Controls</authors>
     <owners>Contoso Controls</owners>
@@ -20,7 +20,7 @@
     <file src="Targets\native\MyManagedPackage.targets" target="build\native"/>
     <file src="..\UWPVersionCheck\bin\Release\netstandard1.4\UWPVersionCheck.dll" target="build\uap10.0.14393"/>
     <file src="..\UWPVersionCheck\bin\Release\netstandard1.4\UWPVersionCheck.dll" target="build\native"/>
-    <file src="Themes\Generic.xaml" target="lib\uap10.0.14393\Themes"/>
+    <file src="Themes\Generic.xaml" target="lib\uap10.0.14393\ManagedPackage\Themes"/>
     <file src="..\ManagedPackage.Design\bin\Release\ManagedPackage.Design.dll" target="lib\uap10.0.14393\Design"/>
     <file src="bin\x86\Release\ManagedPackage.pri" target="lib\uap10.0.14393"/>
     <file src="bin\x86\Release\ManagedPackage.winmd" target="lib\uap10.0.14393"/>

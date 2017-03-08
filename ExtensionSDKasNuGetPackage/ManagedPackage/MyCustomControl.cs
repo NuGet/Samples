@@ -15,8 +15,14 @@ using Windows.UI.Xaml.Media;
 
 namespace ManagedPackage
 {
+    /// <summary>
+    /// MyCustomControl
+    /// </summary>
     public sealed class MyCustomControl : Control
     {
+        /// <summary>
+        /// MyString
+        /// </summary>
         public string MyString
         {
             get { return (string)GetValue(MyStringProperty); }
@@ -29,7 +35,9 @@ namespace ManagedPackage
 
 
 
-     
+        /// <summary>
+        /// MyCustomControl
+        /// </summary>
         public MyCustomControl()
         {
             this.DefaultStyleKey = typeof(MyCustomControl);
