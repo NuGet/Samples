@@ -12,6 +12,7 @@
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}">
                         <Rectangle Height="100" Width="100" Fill="Red"/>
+                        
                     </Border>
                 </ControlTemplate>
             </Setter.Value>
