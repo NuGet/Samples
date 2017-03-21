@@ -18,7 +18,14 @@
         <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)..\..\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
         </ClCompile>
     </ItemDefinitionGroup>
-    <Target Name="BeforeBuild">
-	    <VersionCheckTask MinVersionSupported="10.0.10586.0" TargetMinVersion="$(TargetPlatformMinVersion)"/>
-    </Target>
+    <Target Name="TPMinVCheck" BeforeTargets="Build;ReBuild" Condition="'$(TargetPlatformMinVersion)' != ''">
+     <PropertyGroup>
+    <RequiredTPMinV>10.0.14393</RequiredTPMinV>
+    <ActualTPMinV>$(TargetPlatformMinVersion)</ActualTPMinV>
+    <PackageId>NativePackage</PackageId>
+  </PropertyGroup>
+    <Error 
+        Condition=" '$([System.Version]::Parse($(ActualTPMinV)).CompareTo($([System.Version]::Parse($(RequiredTPMinV)))))' == '-1' " 
+        Text = "The $(PackageId) nuget package cannot be used in the $(MSBuildProjectName) project since the project's TargetPlatformMinVersion - $(ActualTPMinV) does not match the Minimum Version - $(RequiredTPMinV) supported by the package" />
+  </Target>
 </Project>
