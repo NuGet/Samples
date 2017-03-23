@@ -1,14 +1,6 @@
 	
 # Extension SDKs as NuGet Package Sample
-This provides an end-to-end sample to show how to package UWP XAML controls as a NuGet package. 
-
-Specifically, this sample will cover how to:
-* [Add toolbox/assets pane support ](https://docs.microsoft.com/en-us/nuget/guides/create-uwp-controls#add-toolboxassets-pane-support-for-xaml-controls)
-* [Add custom icons to your controls](https://docs.microsoft.com/en-us/nuget/guides/create-uwp-controls#add-custom-icons-to-your-controls)
-* [Support specific Windows platform versions](https://docs.microsoft.com/en-us/nuget/guides/create-uwp-controls#support-specific-windows-platform-versions)
-* [Add design-time support](https://docs.microsoft.com/en-us/nuget/guides/create-uwp-controls#add-design-time-support)
-* [Use strings and resources](https://docs.microsoft.com/en-us/nuget/guides/create-uwp-controls#use-strings-and-resources)
-* [Package content such as images](https://docs.microsoft.com/en-us/nuget/guides/create-uwp-controls#package-content-such-as-images)
+This provides an end-to-end sample to show how to package UWP XAML controls as a NuGet package. Refer to [Create UWP Controls as NuGet Packages](https://docs.microsoft.com/en-us/nuget/guides/create-uwp-controls) in the NuGet documentation for details.
 
 To build the nuget package samples:
 
