@@ -16,21 +16,26 @@
     <tags>native controls</tags>
   </metadata>
   <files>
-    <file src="Targets\uap\MyNativePackage.targets" target="build\uap10.0.14393"/>
-    <file src="..\UWPVersionCheck\bin\Release\netstandard1.4\UWPVersionCheck.dll" target="build\uap10.0.14393"/>
+    <file src="Targets\uap\10.0.14393\MyNativePackage.targets" target="build\uap10.0.14393"/>
+    <file src="Targets\uap\10.0\MyNativePackage.targets" target="build\uap10.0"/>
     <file src="Targets\native\MyNativePackage.targets" target="build\native"/>
-    <file src="..\UWPVersionCheck\bin\Release\netstandard1.4\UWPVersionCheck.dll" target="build\native"/>
     <file src="MyClass.h" target="include"/>
     <file src="MyCustomControl.h" target="include"/>
     <file src="MyUserControl.xaml.h" target="include"/>
     <file src="Themes\Generic.xaml" target="lib\uap10.0.14393\NativePackage\Themes"/>
+    <file src="Themes\Generic.xaml" target="lib\uap10.0\NativePackage\Themes"/>
     <file src="MyUserControl.xaml" target="lib\uap10.0.14393"/>
+    <file src="MyUserControl.xaml" target="lib\uap10.0"/>
     <file src="..\Release\NativePackage\NativePackage.pri" target="lib\uap10.0.14393"/>
+    <file src="..\Release\NativePackage\NativePackage.pri" target="lib\uap10.0"/>
     <file src="..\Release\NativePackage\NativePackage.winmd" target="lib\uap10.0.14393"/>
+    <file src="..\Release\NativePackage\NativePackage.winmd" target="lib\uap10.0"/>
     <file src="..\Release\NativePackage\NativePackage.dll" target="runtimes\win10-x86\native\NativePackage"/>
     <file src="..\Release\NativePackage\NativePackage.pri" target="runtimes\win10-x86\native\NativePackage"/>
     <file src="VisualStudioToolsManifest.xml" target="tools"/>
     <file src="time_zones_4.jpg" target="lib\uap10.0.14393"/>
+    <file src="time_zones_4.jpg" target="lib\uap10.0"/>
     <file src="..\NativePackage.Design\bin\Release\NativePackage.Design.dll" target="lib\uap10.0.14393\Design"/>
+    <file src="..\NativePackage.Design\bin\Release\NativePackage.Design.dll" target="lib\uap10.0\Design"/>
   </files>
 </package>
