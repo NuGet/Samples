@@ -2,7 +2,7 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <!-- See https://github.com/NuGet/Home/issues/2365 for more info.
        The decision whether an assembly needs to be linked or referenced belongs to the package author.
-       It's very important that you make this target name as unique as possible to avoid clashes. Ideally you would include both you package name and the assembly being embedded in the name.
+       It's very important that you make this target name as unique as possible to avoid clashes. Ideally you would include both your package name and the assembly being embedded in the name.
        -->
   <Target Name="EmbeddingAssemblyNameFromPackageId" AfterTargets="ResolveReferences" BeforeTargets="FindReferenceAssembliesForReferences">
     <PropertyGroup>
