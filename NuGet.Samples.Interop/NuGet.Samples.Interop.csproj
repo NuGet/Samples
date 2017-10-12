@@ -6,7 +6,7 @@
     <Shipping>true</Shipping>
     <PackProject>true</PackProject>
     <IncludeInVsix>true</IncludeInVsix>
-    <authors>Microsoft</authors>
+    <authors>NuGet</authors>
     <PackageLicenseUrl>https://raw.githubusercontent.com/NuGet/NuGet.Client/dev/LICENSE.txt</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/NuGet/NuGet.Client</PackageProjectUrl>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
