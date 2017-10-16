@@ -4,15 +4,13 @@
     <PackageId>NuGet.Samples.Interop</PackageId>
     <TargetFramework>net46</TargetFramework>
     <Shipping>true</Shipping>
-    <PackProject>true</PackProject>
-    <IncludeInVsix>true</IncludeInVsix>
     <authors>NuGet</authors>
     <PackageLicenseUrl>https://raw.githubusercontent.com/NuGet/NuGet.Client/dev/LICENSE.txt</PackageLicenseUrl>
-    <PackageProjectUrl>https://github.com/NuGet/NuGet.Client</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/NuGet/Samples/NuGet.Samples.Interop</PackageProjectUrl>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <AssemblyDescription>Sample Interop Package declaration</AssemblyDescription>
     <Description>Sample Interop Package declaration</Description>
-    <Copyright>Microsoft Corporation. All rights reserved.</Copyright>
+    <Copyright>.NET Foundation. All rights reserved.</Copyright>
   </PropertyGroup>
 
   <ItemGroup>
