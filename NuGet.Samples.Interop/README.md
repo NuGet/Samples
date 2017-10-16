@@ -11,10 +11,9 @@ More information on that [here](https://docs.microsoft.com/en-us/nuget/create-pa
 
 **Note**
 By default the build assets will not flow transitively. 
-The default value for private assets is:
+The [default value for private assets](https://docs.microsoft.com/en-us/nuget/consume-packages/package-references-in-project-files#controlling-dependency-assets) is:
 ```
 <PrivateAssets>contentfiles;analyzers;build</PrivateAssets>
 ```
-[More info](https://docs.microsoft.com/en-us/nuget/consume-packages/package-references-in-project-files#controlling-dependency-assets)
 
 Packages authored this way, will work differently when they are a pulled as a transitive dependency from a project to project reference. 
