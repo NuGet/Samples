@@ -6,5 +6,14 @@ In the packages.config case, no special authoring was needed for packages contai
 In Package Reference case,  due to performance considerations this is not done. The EmbedInteropTypes metadata is always false for all assemblies.
 
 We are recommending for package authors to explicitly specify which assemblies need to be embedded. 
-We recommed for this to be done via MsBuild targets in the package. 
+We recommend for this to be done via MsBuild targets in the package. 
 More information on that [here](https://docs.microsoft.com/en-us/nuget/create-packages/creating-a-package). 
+
+**Note**
+By default the build assets will not flow transitively. 
+The default value for private assets is:
+```
+<PrivateAssets>contentfiles;analyzers;build</PrivateAssets>
+```
+[More info](https://docs.microsoft.com/en-us/nuget/consume-packages/package-references-in-project-files#controlling-dependency-assets)
+Packages authored this way, will work differently when they are a pulled as a transitive dependency from a project to project reference. 
