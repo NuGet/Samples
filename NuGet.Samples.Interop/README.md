@@ -16,4 +16,5 @@ The default value for private assets is:
 <PrivateAssets>contentfiles;analyzers;build</PrivateAssets>
 ```
 [More info](https://docs.microsoft.com/en-us/nuget/consume-packages/package-references-in-project-files#controlling-dependency-assets)
+
 Packages authored this way, will work differently when they are a pulled as a transitive dependency from a project to project reference. 
