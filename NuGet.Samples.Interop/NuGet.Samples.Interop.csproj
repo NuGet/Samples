@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <PackageId>NuGet.Samples.Interop</PackageId>
+    <TargetFramework>net46</TargetFramework>
+    <Shipping>true</Shipping>
+    <authors>NuGet</authors>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/NuGet/NuGet.Client/dev/LICENSE.txt</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/NuGet/Samples/NuGet.Samples.Interop</PackageProjectUrl>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <AssemblyDescription>Sample Interop Package declaration</AssemblyDescription>
+    <Description>Sample Interop Package declaration</Description>
+    <Copyright>.NET Foundation. All rights reserved.</Copyright>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="NuGet.Samples.Interop.targets">
+      <PackagePath>build</PackagePath>
+      <Pack>true</Pack>
+    </Content>
+  </ItemGroup>
+</Project>
