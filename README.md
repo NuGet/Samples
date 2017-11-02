@@ -1,6 +1,6 @@
 # Samples
 
-This repo contains NuGet sample packages.
+This repo contains NuGet sample packages and smaple code.
 
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
@@ -12,9 +12,11 @@ This project has adopted the [Microsoft Open Source Code of Conduct](https://ope
 
 1. [PackageReferenceProjects](PackageReferenceProjects) demonstrates how you can manually migrate to the new PackageReference format.
 
-1.  [ContentFilesExample](ContentFilesExample) is a sample package and project that demonstrates how to use the contentFiles feature in NuGet 3.3+
+1. [ContentFilesExample](ContentFilesExample) is a sample package and project that demonstrates how to use the contentFiles feature in NuGet 3.3+
 
 1. [Preinstalled-Packages](Preinstalled-Packages) demonstrates how template authors can instruct NuGet to install the necessary packages, rather than individual libraries. Read more about [Packages in Visual Studio templates](https://docs.microsoft.com/en-us/nuget/visual-studio-extensibility/visual-studio-templates)
+
+1. [CatalogReaderExample](CatalogReaderExample) is a sample showing how to read the NuGet API's catalog resource.
 
 ## Documentation and Further Learning
 
@@ -29,7 +31,7 @@ The [NuGet Docs](http://docs.nuget.org) cover creating NuGet packages in more de
 
 ## Feedback
 
-If you're having trouble with the NuGet.org Website, file a bug on the [NuGet Gallery Issue Tracker](https://github.com/nuget/NuGetGallery/issues). 
+If you're having trouble with the NuGet.org website or HTTP API, file a bug on the [NuGet Gallery Issue Tracker](https://github.com/nuget/NuGetGallery/issues). 
 
 If you're having trouble with the NuGet client tools (the Visual Studio extension, NuGet.exe command line tool, etc.), file a bug on [NuGet Home](https://github.com/nuget/home/issues).
 
