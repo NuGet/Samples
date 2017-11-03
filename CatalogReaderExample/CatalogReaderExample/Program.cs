@@ -24,10 +24,10 @@ namespace CatalogReaderExample
             // Use nuget.org's V3 package source URL, a.k.a. the service index.
             var sourceUrl = "https://api.nuget.org/v3/index.json";
 
-            // Define a lower time bound for leaves to fetch. This exclude minimum time bound is called the cursor.
+            // Define a lower time bound for leaves to fetch. This exclusive minimum time bound is called the cursor.
             var cursor = GetCursor();
 
-            // Discovery the catalog index URL from the service index.
+            // Discover the catalog index URL from the service index.
             var catalogIndexUrl = await GetCatalogIndexUrlAsync(sourceUrl);
 
             var httpClient = new HttpClient();
