@@ -16,7 +16,7 @@ namespace CatalogReaderExample
 
         public static void Main(string[] args)
         {
-            MainAsync().Wait();
+            MainAsync().GetAwaiter().GetResult();
         }
 
         private static async Task MainAsync()
