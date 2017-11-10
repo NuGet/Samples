@@ -52,7 +52,8 @@ namespace NuGet.Protocol.Catalog
         /// chronological order. After a commit is completed, its commit timestamp is written to the cursor, i.e. when
         /// transitioning from commit timestamp A to B, A is written to the cursor so that it never is processed again.
         /// </summary>
-        public async Task ProcessAsync()
+        /// <returns>True if all of the catalog leaves found were processed successfully.</returns>
+        public async Task<bool> ProcessAsync()
         {
             var catalogIndexUrl = await GetCatalogIndexUrlAsync();
 
@@ -62,10 +63,10 @@ namespace NuGet.Protocol.Catalog
                 minCommitTimestamp,
                 _settings.MaxCommitTimestamp);
 
-            await ProcessIndexAsync(catalogIndexUrl, minCommitTimestamp);
+            return await ProcessIndexAsync(catalogIndexUrl, minCommitTimestamp);
         }
 
-        private async Task ProcessIndexAsync(string catalogIndexUrl, DateTimeOffset minCommitTimestamp)
+        private async Task<bool> ProcessIndexAsync(string catalogIndexUrl, DateTimeOffset minCommitTimestamp)
         {
             var index = await _client.GetIndexAsync(catalogIndexUrl);
 
@@ -77,9 +78,10 @@ namespace NuGet.Protocol.Catalog
                 pageItems.Count,
                 index.Items.Count);
 
+            var success = true;
             for (var i = 0; i < pageItems.Count; i++)
             {
-                var success = await ProcessPageAsync(minCommitTimestamp, pageItems[i]);
+                success = await ProcessPageAsync(minCommitTimestamp, pageItems[i]);
                 if (!success)
                 {
                     _logger.LogWarning(
@@ -89,6 +91,8 @@ namespace NuGet.Protocol.Catalog
                     break;
                 }
             }
+
+            return success;
         }
 
         private async Task<bool> ProcessPageAsync(DateTimeOffset minCommitTimestamp, CatalogPageItem pageItem)

@@ -4,7 +4,6 @@
 using System;
 using System.Net.Http;
 using System.Threading.Tasks;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
 namespace NuGet.Protocol.Catalog
@@ -18,33 +17,35 @@ namespace NuGet.Protocol.Catalog
 
         private static async Task MainAsync()
         {
-            // Set up the dependency injection container.
-            var serviceCollection = new ServiceCollection();
-            serviceCollection.AddLogging(
-                x => x.AddConsole().SetMinimumLevel(LogLevel.Warning));
-            serviceCollection.AddTransient<CatalogProcessor>();
-            serviceCollection.AddTransient<ICursor, FileCursor>(
-                x => new FileCursor("cursor.json", x.GetRequiredService<ILogger<FileCursor>>()));
-            serviceCollection.AddSingleton(
-                x => new HttpClient());
-            serviceCollection.AddTransient<ICatalogClient, CatalogClient>();
-            serviceCollection.AddTransient(
-                x => new CatalogProcessorSettings
-                {
-                    DefaultMinCommitTimestamp = DateTimeOffset.UtcNow.AddHours(-2),
-                    ExcludeRedundantLeaves = false,
-                });
-
-            // Add our custom leaf processor.
-            serviceCollection.AddTransient<ICatalogLeafProcessor, LoggerCatalogLeafProcessor>();
-
-            // Initialize the catalog processor.
-            using (var serviceProvider = serviceCollection.BuildServiceProvider())
+            using (var loggerFactory = new LoggerFactory().AddConsole(LogLevel.Warning))
+            using (var httpClient = new HttpClient())
             {
-                var processor = serviceProvider.GetRequiredService<CatalogProcessor>();
+                var fileCursor = new FileCursor("cursor.json", loggerFactory.CreateLogger<FileCursor>());
+                var catalogClient = new CatalogClient(httpClient, loggerFactory.CreateLogger<CatalogClient>());
+                var leafProcessor = new LoggerCatalogLeafProcessor(loggerFactory.CreateLogger<LoggerCatalogLeafProcessor>());
+                var settings = new CatalogProcessorSettings
+                {
+                    DefaultMinCommitTimestamp = DateTimeOffset.UtcNow.AddHours(-1),
+                    ExcludeRedundantLeaves = false,
+                };
 
-                // Process the items.
-                await processor.ProcessAsync();
+                var catalogProcessor = new CatalogProcessor(
+                    fileCursor,
+                    catalogClient,
+                    leafProcessor,
+                    settings,
+                    loggerFactory.CreateLogger<CatalogProcessor>());
+
+                bool success;
+                do
+                {
+                    success = await catalogProcessor.ProcessAsync();
+                    if (!success)
+                    {
+                        Console.WriteLine("Processing the catalog leafs failed. Retrying.");
+                    }
+                }
+                while (!success);
             }
         }
     }
