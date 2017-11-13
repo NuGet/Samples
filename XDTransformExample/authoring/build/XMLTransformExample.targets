@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+ 
+  <!--
+	Remember to change the target name to include your package name so that it's unique across packages.
+  -->
+  <Target Name="CollectConfigFilesTransforms" BeforeTargets="CollectWebConfigsToTransform">
+  
+	<!-- Define properties to transform Web.config file -->
+	<PropertyGroup>
+      <XmlTransformInfo>$(MSBuildProjectDirectory)\Web.config</XmlTransformInfo>
+      <TransformFilePath>$(MSBuildThisFileDirectory)Web.config.transform</TransformFilePath>
+    </PropertyGroup>
+
+	<!-- Call WebConfigsToTransform to transform Web.config file -->
+    <ItemGroup Condition="Exists($(XmlTransformInfo))">
+      <WebConfigsToTransform Include="$(XmlTransformInfo)">
+        <TransformFile>$(TransformFilePath)</TransformFile>
+        <TransformOriginalFolder>$(TransformWebConfigIntermediateLocation)\original</TransformOriginalFolder>
+        <TransformFileFolder>$(TransformWebConfigIntermediateLocation)\assist</TransformFileFolder>
+        <DestinationRelativePath>Web.config</DestinationRelativePath>
+        <TransformOutputFile>$(TransformWebConfigIntermediateLocation)\transformed\%(DestinationRelativePath)</TransformOutputFile>
+        <TransformScope>$([System.IO.Path]::GetFullPath($(WPPAllFilesInSingleFolder)\%(DestinationRelativePath)))</TransformScope>
+        <Exclude>false</Exclude>
+      </WebConfigsToTransform>
+    </ItemGroup>
+
+	<!-- Define properties to transform appconfig.config file -->
+    <PropertyGroup>
+      <XmlTransformInfo>$(MSBuildProjectDirectory)\appconfig.config</XmlTransformInfo>
+      <TransformFilePath>$(MSBuildThisFileDirectory)appconfig.config.transform</TransformFilePath>
+    </PropertyGroup>
+
+	<!-- Call WebConfigsToTransform to transform appconfig.config file -->
+    <ItemGroup Condition="Exists($(XmlTransformInfo))">
+      <WebConfigsToTransform Include="$(XmlTransformInfo)">
+        <TransformFile>$(TransformFilePath)</TransformFile>
+        <TransformOriginalFolder>$(TransformWebConfigIntermediateLocation)\original</TransformOriginalFolder>
+        <TransformFileFolder>$(TransformWebConfigIntermediateLocation)\assist</TransformFileFolder>
+        <DestinationRelativePath>appconfig.config</DestinationRelativePath>
+        <TransformOutputFile>$(TransformWebConfigIntermediateLocation)\transformed\%(DestinationRelativePath)</TransformOutputFile>
+        <TransformScope>$([System.IO.Path]::GetFullPath($(WPPAllFilesInSingleFolder)\%(DestinationRelativePath)))</TransformScope>
+        <Exclude>false</Exclude>
+      </WebConfigsToTransform>
+    </ItemGroup>
+	<Error Text="Remember, the target name should be a unique name for your specific package. We recommended making this target name as unique as possible. Delete this error line once you have done that" />
+  </Target>
+
+</Project>
