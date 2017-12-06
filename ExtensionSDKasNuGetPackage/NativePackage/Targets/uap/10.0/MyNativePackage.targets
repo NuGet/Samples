@@ -7,7 +7,6 @@
        		<CopyToOutputDirectory>Always</CopyToOutputDirectory>
    	</Content>
     </ItemGroup>
-  <Target Name="BeforeBuild">
 <Target Name="TPMinVCheck" BeforeTargets="Build;ReBuild" Condition="'$(TargetPlatformMinVersion)' != ''">
      <PropertyGroup>
     <RequiredTPMinV>10.0.14393</RequiredTPMinV>
