@@ -2,7 +2,7 @@
 <package>
   <metadata minClientVersion="3.3.0">
     <id>XMLTransformExample</id>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <authors>nuget</authors>
     <owners>nuget</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
