@@ -15,6 +15,9 @@ namespace NuGet.Protocol.Catalog
         [JsonProperty("created")]
         public DateTimeOffset Created { get; set; }
 
+        [JsonProperty("lastEdited")]
+        public DateTimeOffset LastEdited { get; set; }
+
         [JsonProperty("dependencyGroups")]
         public List<PackageDependencyGroup> DependencyGroups { get; set; }
 
