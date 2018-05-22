@@ -49,6 +49,16 @@ void SetReferenceTypeMember_MyString(::Platform::Object^ instance, ::Platform::O
     safe_cast<TDeclaringType^>(instance)->MyString = safe_cast<TValue^>(value);
 }
 
+enum TypeInfo_Flags
+{
+    TypeInfo_Flags_None                 = 0x00,
+    TypeInfo_Flags_IsLocalType          = 0x01,
+    TypeInfo_Flags_IsSystemType         = 0x02,
+    TypeInfo_Flags_IsReturnTypeStub     = 0x04,
+    TypeInfo_Flags_IsBindable           = 0x08,
+    TypeInfo_Flags_IsMarkupExtension    = 0x10, 
+};
+
 struct TypeInfo
 {
     PCWSTR  typeName;
@@ -60,11 +70,9 @@ struct TypeInfo
     int     baseTypeIndex;
     int     firstMemberIndex;
     int     firstEnumValueIndex;
+    int     createFromStringIndex;
     ::Windows::UI::Xaml::Interop::TypeKind kindofType;
-    bool    isLocalType;
-    bool    isSystemType;
-    bool    isReturnTypeStub;
-    bool    isBindable;
+    unsigned int flags;
 };
 
 const TypeInfo TypeInfos[] = 
@@ -73,38 +81,38 @@ const TypeInfo TypeInfos[] =
     L"String", L"",
     nullptr, nullptr, nullptr, nullptr,
     -1,
-    0, 0, ::Windows::UI::Xaml::Interop::TypeKind::Metadata,
-    false, true,  false, false,
+    0, 0, -1, ::Windows::UI::Xaml::Interop::TypeKind::Metadata,
+    TypeInfo_Flags_IsSystemType | TypeInfo_Flags_None,
     //   1
     L"NativePackage.MyUserControl", L"",
     &ActivateType<::NativePackage::MyUserControl>, nullptr, nullptr, nullptr,
     4, // Windows.UI.Xaml.Controls.UserControl
-    0, 0, ::Windows::UI::Xaml::Interop::TypeKind::Metadata,
-    true,  false, false, false,
+    0, 0, -1, ::Windows::UI::Xaml::Interop::TypeKind::Metadata,
+    TypeInfo_Flags_IsLocalType | TypeInfo_Flags_None,
     //   2
     L"NativePackage.MyCustomControl", L"",
     &ActivateType<::NativePackage::MyCustomControl>, nullptr, nullptr, nullptr,
     3, // Windows.UI.Xaml.Controls.Control
-    0, 0, ::Windows::UI::Xaml::Interop::TypeKind::Metadata,
-    true,  false, false, false,
+    0, 0, -1, ::Windows::UI::Xaml::Interop::TypeKind::Metadata,
+    TypeInfo_Flags_IsLocalType | TypeInfo_Flags_None,
     //   3
     L"Windows.UI.Xaml.Controls.Control", L"",
     nullptr, nullptr, nullptr, nullptr,
     -1,
-    1, 0, ::Windows::UI::Xaml::Interop::TypeKind::Metadata,
-    false, true,  false, false,
+    1, 0, -1, ::Windows::UI::Xaml::Interop::TypeKind::Metadata,
+    TypeInfo_Flags_IsSystemType | TypeInfo_Flags_None,
     //   4
     L"Windows.UI.Xaml.Controls.UserControl", L"",
     nullptr, nullptr, nullptr, nullptr,
     -1,
-    1, 0, ::Windows::UI::Xaml::Interop::TypeKind::Metadata,
-    false, true,  false, false,
+    1, 0, -1, ::Windows::UI::Xaml::Interop::TypeKind::Metadata,
+    TypeInfo_Flags_IsSystemType | TypeInfo_Flags_None,
     //  Last type here is for padding
     L"", L"",
     nullptr, nullptr, nullptr, nullptr,
     -1, 
-    1, 0,::Windows::UI::Xaml::Interop::TypeKind::Custom,
-    false, false, false, false,
+    1, 0, -1, ::Windows::UI::Xaml::Interop::TypeKind::Custom,
+    TypeInfo_Flags_None,
 };
 
 const UINT TypeInfoLookup[] = { 
@@ -179,7 +187,7 @@ PCWSTR GetShortName(PCWSTR longName)
 
 const TypeInfo* GetTypeInfo(::Platform::String^ typeName)
 {
-    int typeNameLength = typeName->Length();
+    auto typeNameLength = typeName->Length();
     if (typeNameLength < _countof(TypeInfoLookup) - 1)
     {
         for (UINT i = TypeInfoLookup[typeNameLength]; i < TypeInfoLookup[typeNameLength+1]; i++)
@@ -195,7 +203,8 @@ const TypeInfo* GetTypeInfo(::Platform::String^ typeName)
 
 const MemberInfo* GetMemberInfo(::Platform::String^ longMemberName)
 {
-    for (int lastDotIndex = longMemberName->Length(); lastDotIndex >= 0; lastDotIndex--)
+    auto lastDotIndex = longMemberName->Length();
+    while (true)
     {
         if (longMemberName->Data()[lastDotIndex] == '.')
         {
@@ -214,6 +223,11 @@ const MemberInfo* GetMemberInfo(::Platform::String^ longMemberName)
             }
             break;
         }
+        if (lastDotIndex == 0)
+        {
+            break;
+        }
+        lastDotIndex--;
     }
     return nullptr;
 }
@@ -226,7 +240,7 @@ const MemberInfo* GetMemberInfo(::Platform::String^ longMemberName)
     {
         return nullptr;
     }
-    else if (pTypeInfo->isSystemType)
+    else if (pTypeInfo->flags & TypeInfo_Flags_IsSystemType)
     {
         return ref new ::XamlTypeInfo::InfoProvider::XamlSystemBaseType(typeName);
     }
@@ -242,9 +256,11 @@ const MemberInfo* GetMemberInfo(::Platform::String^ longMemberName)
         userType->DictionaryAdd = pTypeInfo->dictionaryAdd;
         userType->FromStringConverter = pTypeInfo->fromStringConverter;
         userType->ContentPropertyName = ::Platform::StringReference(pTypeInfo->contentPropertyName);
-        userType->IsLocalType = pTypeInfo->isLocalType;
-        userType->IsReturnTypeStub = pTypeInfo->isReturnTypeStub;
-        userType->IsBindable = pTypeInfo->isBindable;
+        userType->IsLocalType = pTypeInfo->flags & TypeInfo_Flags_IsLocalType;
+        userType->IsReturnTypeStub = pTypeInfo->flags & TypeInfo_Flags_IsReturnTypeStub;
+        userType->IsBindable = pTypeInfo->flags & TypeInfo_Flags_IsBindable;
+        userType->IsMarkupExtension = pTypeInfo->flags & TypeInfo_Flags_IsMarkupExtension;
+        userType->CreateFromStringMethod = nullptr;
         int nextMemberIndex = pTypeInfo->firstMemberIndex;
         for (int i=pTypeInfo->firstMemberIndex; i < pNextTypeInfo->firstMemberIndex; i++)
         {
