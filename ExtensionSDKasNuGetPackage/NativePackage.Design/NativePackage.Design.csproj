@@ -76,5 +76,11 @@
   <ItemGroup>
     <EmbeddedResource Include="Icons\NativePackage.MyCustomControl.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NativePackage\NativePackage.vcxproj">
+      <Project>{f27c600c-97d7-44a4-aa11-948ae759efa7}</Project>
+      <Name>NativePackage</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
