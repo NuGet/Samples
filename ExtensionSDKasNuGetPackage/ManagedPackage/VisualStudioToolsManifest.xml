@@ -2,6 +2,7 @@
   <File Reference = "ManagedPackage.winmd" >
     <ToolboxItems VSCategory="Managed Package" BlendCategory="Managed Package">
       <Item Type="ManagedPackage.MyCustomControl" />
+      <Item Type="ManagedPackage.MyUserControl" />
     </ToolboxItems>
   </File>
 </FileList>

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>MyManagedPackage</id>
+    <version>1.0.4</version>
+    <title>MyManagedPackage</title>
+    <authors>Contoso Controls</authors>
+    <owners>Contoso Controls</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>http://someurl.com/</licenseUrl>
+    <projectUrl>http://someurl.com/</projectUrl>
+    <iconUrl>http://someurl.com/</iconUrl>
+    <description>Contains MyUserControl and MyCustomControl</description>
+    <releaseNotes>Sample release notes</releaseNotes>
+    <copyright>Copyright 2016</copyright>
+    <tags>managed controls</tags>
+  </metadata>
+  <files>
+    <file src="lib\uap10.0.14393\ManagedPackage\Themes\Generic.xbf" target="lib\uap10.0.14393\ManagedPackage\Themes\Generic.xbf" />
+    <file src="lib\uap10.0.14393\ManagedPackage\ManagedPackage.xr.xml" target="lib\uap10.0.14393\ManagedPackage\ManagedPackage.xr.xml" />
+    <file src="lib\uap10.0.14393\ManagedPackage\MyUserControl.xbf" target="lib\uap10.0.14393\ManagedPackage\MyUserControl.xbf" />
+    <file src="lib\uap10.0.14393\ManagedPackage.pdb" target="lib\uap10.0.14393\ManagedPackage.pdb" />
+    <file src="lib\uap10.0.14393\ManagedPackage.pri" target="lib\uap10.0.14393\ManagedPackage.pri" />
+    <file src="lib\uap10.0.14393\ManagedPackage.winmd" target="lib\uap10.0.14393\ManagedPackage.winmd" />
+  </files>
+</package>
