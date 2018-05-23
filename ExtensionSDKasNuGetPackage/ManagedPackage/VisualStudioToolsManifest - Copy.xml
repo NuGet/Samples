@@ -1,9 +1,0 @@
-﻿<FileList
-  MinVSVersion = "14.0">
-  <File Reference = "ManagedPackage.winmd" Implementation = "ManagedPackage.winmd">
-    <ToolboxItems VSCategory="Graph"/>
-    </ToolboxItems>
-    <ToolboxItems BlendCategory="Controls/sample/Graph">
-    </ToolboxItems>
-  </File>
-</FileList>

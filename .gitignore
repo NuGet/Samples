@@ -12,3 +12,4 @@ _ReSharper.*
 SatellitePackageSample/packages/*
 *.nupkg
 VsCredentialProvider/packages/
+Generated\ Files/*

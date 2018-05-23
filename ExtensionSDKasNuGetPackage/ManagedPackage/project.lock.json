@@ -1,7 +1,7 @@
 {
-  "version": 2,
+  "version": 3,
   "targets": {
-    "UAP,Version=v10.0": {
+    "UAP,Version=v10.0.10586": {
       "Microsoft.CSharp/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -1878,7 +1878,7 @@
         }
       }
     },
-    "UAP,Version=v10.0/win10-arm": {
+    "UAP,Version=v10.0.10586/win10-arm": {
       "Microsoft.CSharp/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -3621,7 +3621,7 @@
         }
       }
     },
-    "UAP,Version=v10.0/win10-arm-aot": {
+    "UAP,Version=v10.0.10586/win10-arm-aot": {
       "Microsoft.CSharp/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -5321,7 +5321,7 @@
         }
       }
     },
-    "UAP,Version=v10.0/win10-x64": {
+    "UAP,Version=v10.0.10586/win10-x64": {
       "Microsoft.CSharp/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -7073,7 +7073,7 @@
         }
       }
     },
-    "UAP,Version=v10.0/win10-x64-aot": {
+    "UAP,Version=v10.0.10586/win10-x64-aot": {
       "Microsoft.CSharp/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -8773,7 +8773,7 @@
         }
       }
     },
-    "UAP,Version=v10.0/win10-x86": {
+    "UAP,Version=v10.0.10586/win10-x86": {
       "Microsoft.CSharp/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -10525,7 +10525,7 @@
         }
       }
     },
-    "UAP,Version=v10.0/win10-x86-aot": {
+    "UAP,Version=v10.0.10586/win10-x86-aot": {
       "Microsoft.CSharp/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -15607,24 +15607,41 @@
     "": [
       "Microsoft.NETCore.UniversalWindowsPlatform >= 5.1.0"
     ],
-    "UAP,Version=v10.0": []
+    "UAP,Version=v10.0.10586": []
   },
   "packageFolders": {
-    "C:\\Users\\karann\\.nuget\\packages\\": {}
+    "C:\\Users\\karann\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {}
   },
   "project": {
     "restore": {
-      "projectUniqueName": "C:\\Users\\karann\\Documents\\GitHub\\Samples\\ExtensionSDKasNuGetPackage\\ManagedPackage\\ManagedPackage.csproj",
+      "projectUniqueName": "C:\\Users\\karann\\Documents\\GitHub\\NuGetSamples\\ExtensionSDKasNuGetPackage\\ManagedPackage\\ManagedPackage.csproj",
       "projectName": "ManagedPackage",
-      "projectPath": "C:\\Users\\karann\\Documents\\GitHub\\Samples\\ExtensionSDKasNuGetPackage\\ManagedPackage\\ManagedPackage.csproj",
-      "projectJsonPath": "C:\\Users\\karann\\Documents\\GitHub\\Samples\\ExtensionSDKasNuGetPackage\\ManagedPackage\\project.json",
-      "projectStyle": "ProjectJson"
+      "projectPath": "C:\\Users\\karann\\Documents\\GitHub\\NuGetSamples\\ExtensionSDKasNuGetPackage\\ManagedPackage\\ManagedPackage.csproj",
+      "projectJsonPath": "C:\\Users\\karann\\Documents\\GitHub\\NuGetSamples\\ExtensionSDKasNuGetPackage\\ManagedPackage\\project.json",
+      "packagesPath": "C:\\Users\\karann\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\karann\\Documents\\GitHub\\NuGetSamples\\ExtensionSDKasNuGetPackage\\ManagedPackage\\obj\\",
+      "projectStyle": "ProjectJson",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\karann\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Users\\karann\\Documents\\GitHub\\NuGetSamples\\ExtensionSDKasNuGetPackage\\ManagedPackage": {},
+        "C:\\nuget\\local": {},
+        "https://api.nuget.org/v3/index.json": {}
+      }
     },
     "dependencies": {
-      "Microsoft.NETCore.UniversalWindowsPlatform": "5.1.0"
+      "Microsoft.NETCore.UniversalWindowsPlatform": "[5.1.0, )"
     },
     "frameworks": {
-      "uap10.0": {}
+      "uap10.0.10586": {}
     },
     "runtimes": {
       "win10-arm": {

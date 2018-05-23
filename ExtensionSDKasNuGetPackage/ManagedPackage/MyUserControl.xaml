@@ -8,6 +8,7 @@
     mc:Ignorable="d"
     d:DesignHeight="300"
     d:DesignWidth="400">
-    <Grid Background="Red">
+    <Grid Background="AliceBlue">
+        <Image Source="/ManagedPackage/Images/time_zones_4.jpg"/>
     </Grid>
 </UserControl>
