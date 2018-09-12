@@ -7,20 +7,21 @@ using System.Globalization;
 
 namespace ConsoleApp
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            Console.OutputEncoding = UnicodeEncoding.UTF8;
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			Console.OutputEncoding = UnicodeEncoding.UTF8;
 
-            foreach (var culture in new[] { "en-us", "ja-jp", "ru-ru", "cs-cz" })
-            {
-                Thread.CurrentThread.CurrentUICulture = new CultureInfo(culture);
-                Console.WriteLine("Current Culture: " + Thread.CurrentThread.CurrentUICulture.EnglishName);
-                Console.WriteLine(ClassLibrary.Strings.AlwaysEnglish);
-                Console.WriteLine(ClassLibrary.Strings.Localizable);
-                Console.WriteLine();
-            }
-        }
-    }
+			foreach (var culture in new[] { "en-us", "ja-jp", "ru-ru", "cs-cz" })
+			{
+				Thread.CurrentThread.CurrentUICulture = new CultureInfo(culture);
+				Console.WriteLine("Current Culture: " + Thread.CurrentThread.CurrentUICulture.EnglishName);
+				Console.WriteLine(ClassLibrary.Strings.AlwaysEnglish);
+				Console.WriteLine(ClassLibrary.Strings.Localizable);
+				Console.WriteLine("Press Enter to continue");
+				Console.ReadLine();
+			}
+		}
+	}
 }
