@@ -164,7 +164,7 @@ namespace NuGet.Protocol.Catalog
 
             // A published year of 1900 indicates that this package is unlisted, when the listed property itself is
             // not present (legacy behavior).
-            return leaf.Published.Year == 1900;
+            return leaf.Published.Year != 1900;
         }
     }
 }
