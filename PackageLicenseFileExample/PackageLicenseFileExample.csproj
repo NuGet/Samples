@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="License.txt" Pack="true" Visible="false" PackagePath="$(PackageLicenseFile)"/>
+    <None Include="License.txt" Pack="true" Visible="false" PackagePath=""/>
   </ItemGroup>
   
 </Project>
