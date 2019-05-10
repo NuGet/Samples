@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <RestoreSources>../nupkgs</RestoreSources>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Both of these packages deliver assemblies with the same namespace types. Library.Lib exists in both.-->
+    <PackageReference Include="ClassLib1" Version="1.0.0" />
+    <PackageReference Include="ClassLib2" Version="1.0.0" />
+  </ItemGroup>
+
+  <Target Name="AddCustomAliases" BeforeTargets="FindReferenceAssembliesForReferences;ResolveReferences">
+    <ItemGroup>
+      <ReferencePath Condition="'%(FileName)' == 'ClassLib2' AND '%(ReferencePath.NuGetPackageId)' == 'ClassLib2'">
+        <Aliases>ClassLib2</Aliases>
+      </ReferencePath>
+    </ItemGroup>
+  </Target>
+
+</Project>

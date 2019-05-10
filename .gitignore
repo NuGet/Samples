@@ -13,3 +13,4 @@ SatellitePackageSample/packages/*
 *.nupkg
 VsCredentialProvider/packages/
 Generated\ Files/*
+globalPackagesFolder/

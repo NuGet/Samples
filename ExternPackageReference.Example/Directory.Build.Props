@@ -1,0 +1,6 @@
+<Project>
+  <PropertyGroup>
+    <RestorePackagesPath>..\globalPackagesFolder</RestorePackagesPath>
+    <PackageOutputPath>..\nupkgs</PackageOutputPath>
+  </PropertyGroup>
+</Project>
