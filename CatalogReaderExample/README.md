@@ -4,6 +4,6 @@ These are the code samples from the guide on how to [query for all packages publ
 
 * `NuGet.Protocol.Catalog.Sample` - A sample using the pre-release catalog SDK.
 * `NuGet.Protocol.Catalog` - The pre-release catalog SDK. This package is available on the `nuget-build` MyGet feed, for which you can use the NuGet package source URL `https://dotnet.myget.org/F/nuget-build/api/v3/index.json`. You can install this package to a project compatible with `netstandard1.3` or greater (such as .NET Framework 4.6).
-* `CatalogReaderExample` - A minimal sample with fewer dependencies that illustrates the interaction with the catalog in more detail.
+* `CatalogReaderExample` - A minimal sample with fewer dependencies that illustrates the interaction with the catalog in greater detail.
 
 We recommend you start with `NuGet.Protocol.Catalog.Sample`.
