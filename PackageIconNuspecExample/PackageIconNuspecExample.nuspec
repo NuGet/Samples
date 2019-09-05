@@ -1,0 +1,18 @@
+﻿<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <version>1.0.0</version>
+    <authors>karann</authors>
+    <owners />
+    <id>PackageIconNuspecExample</id>
+    <title />
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A class library.</description>
+    <language>en-US</language>
+    <icon>icon.png</icon>
+  </metadata>
+  <files>
+    <file src="bin\Debug\netstandard2.0\PackageIconNuspecExample.dll" target="lib\netstandard2.0\PackageIconNuspecExample.dll" />
+    <file src="icon.png" target="" />
+  </files>
+</package>
