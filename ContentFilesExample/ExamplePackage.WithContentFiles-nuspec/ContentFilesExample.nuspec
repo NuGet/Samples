@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
   <metadata minClientVersion="3.3.0">
-    <id>ContentFilesExample</id>
+    <id>ExamplePackage.WithContentFiles</id>
     <version>1.0.0</version>
     <authors>nuget</authors>
     <owners>nuget</owners>

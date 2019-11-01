@@ -9,4 +9,4 @@ if (-not (Test-Path $NuGetExe)) {
 
 # Pack will copy all files in this folder into the nupkg
 # The contentFiles section of the nuspec is used by the consuming client, not during pack.
-& $NuGetExe pack ContentFilesExample.nuspec -Exclude pack.ps1
+& $NuGetExe pack ExamplePackage.WithContentFiles-nuspec\ContentFilesExample.nuspec -OutputDirectory Packages\

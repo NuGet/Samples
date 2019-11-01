@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Version>2.0.0</Version>
+
+    <!-- don't use globbing that automatically includes *.cs in dll -->
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+
+    <!-- don't put .dll in this package, content only. -->
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+
+    <PackageOutputPath>..\Packages\</PackageOutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- support PackageReference hosting projects with contentfiles\ -->
+    <Content Include="cs\**\*.cs" 
+             PackagePath="contentfiles\cs\$(TargetFramework)\" />
+    <Content Include="any\any\**\*" 
+             PackagePath="contentfiles\any\any\" />
+
+    <!-- support Packages.Config hosting projects with content\ -->
+    <Content Include="cs\**\*.cs" 
+             PackagePath="content\cs\$(TargetFramework)\" />
+    <Content Include="any\any\**\*" 
+             PackagePath="content\any\any\" />
+
+    <!-- Make Package appear compat with this targetframework only... -->
+    <Content Include="_._" PackagePath="lib\$(TargetFramework)\" />
+
+    <None Include="**\tools\*" />
+  </ItemGroup>
+</Project>
