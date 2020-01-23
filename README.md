@@ -18,6 +18,8 @@ This project has adopted the [Microsoft Open Source Code of Conduct](https://ope
 
 1. [CatalogReaderExample](CatalogReaderExample) is a sample showing how to read the NuGet API's catalog resource.
 
+1. [PackageDownloadsExample](PackageDownloadsExample) shows how to get a package's download counts.
+
 ## Documentation and Further Learning
 
 The [NuGet Docs](http://docs.nuget.org) cover creating NuGet packages in more detail:
