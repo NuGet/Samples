@@ -2,8 +2,10 @@
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Threading;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using NuGet.Common;
 using NuGet.Configuration;
 using NuGet.Protocol;
 using NuGet.Protocol.Core.Types;
@@ -27,45 +29,23 @@ namespace PackageDownloadsExample
                 return;
             }
 
-            // 1. Find the latest search endpoint using the NuGet Service Index API
-            // See: https://docs.microsoft.com/en-us/nuget/api/service-index
             var source = new PackageSource("https://api.nuget.org/v3/index.json");
             var providers = Repository.Provider.GetCoreV3();
             var repository = new SourceRepository(source, providers);
 
-            var serviceIndex = await repository.GetResourceAsync<ServiceIndexResourceV3>();
-            var searchEndpoints = serviceIndex.GetServiceEntryUris(ServiceTypes.SearchQueryService);
+            var search = await repository.GetResourceAsync<RawSearchResourceV3>();
+            var filter = new SearchFilter(includePrerelease: true);
 
-            if (!searchEndpoints.Any())
-            {
-                Console.WriteLine("Unable to find search endpoints");
-                return;
-            }
+            var response = await search.Search($"packageid:{packageId}", filter, skip: 0, take: 20, NullLogger.Instance, CancellationToken.None);
+            var results = response.Select(result => result.ToObject<SearchResult>()).ToList();
 
-            // 2. Find your package's latest metadata using the NuGet Search V3 API 
-            // See: https://docs.microsoft.com/en-us/nuget/api/search-query-service-resource
-            var query = "packageid:" + WebUtility.UrlEncode(packageId);
-            var request = new Uri(searchEndpoints.First().ToString() + $"?q={query}&prerelease=true&semVerLevel=2.0.0");
-
-            using var httpClient = new HttpClient();
-            using var response = await httpClient.GetAsync(request);
-
-            if (response.StatusCode != HttpStatusCode.OK)
-            {
-                Console.WriteLine($"Unexpected response status code {response.StatusCode}: {response.ReasonPhrase}");
-                return;
-            }
-
-            var content = await response.Content.ReadAsStringAsync();
-            var results = JsonConvert.DeserializeObject<SearchResponse>(content);
-
-            if (results.Data.Count == 0)
+            if (results.Count == 0)
             {
                 Console.WriteLine($"Could not find any results for package ID '{packageId}'");
                 return;
             }
 
-            foreach (var result in results.Data)
+            foreach (var result in results)
             {
                 Console.WriteLine($"Package {result.PackageId} has {result.TotalDownloads} total downloads.");
                 Console.WriteLine();
