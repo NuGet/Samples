@@ -19,7 +19,7 @@ namespace NuGet.Protocol.Samples
 
             Console.WriteLine();
             Console.WriteLine("Downloading package...");
-            await ListPackageVersionsAsync();
+            await DownloadPackageAsync();
 
             Console.WriteLine();
             Console.WriteLine("Get package metadata...");
