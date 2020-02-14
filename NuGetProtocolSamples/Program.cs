@@ -3,19 +3,34 @@ using System.Collections.Generic;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
-using Newtonsoft.Json.Linq;
 using NuGet.Common;
 using NuGet.Packaging;
 using NuGet.Protocol.Core.Types;
 using NuGet.Versioning;
-using Xunit;
 
 namespace NuGet.Protocol.Samples
 {
-    public class Samples
+    public class Program
     {
-        [Fact]
-        public async Task ListPackageVersions()
+        public static async Task Main(string[] args)
+        {
+            Console.WriteLine("Listing package versions...");
+            await ListPackageVersionsAsync();
+
+            Console.WriteLine();
+            Console.WriteLine("Downloading package...");
+            await ListPackageVersionsAsync();
+
+            Console.WriteLine();
+            Console.WriteLine("Get package metadata...");
+            await GetPackageMetadataAsync();
+
+            Console.WriteLine();
+            Console.WriteLine("Search packages..");
+            await SearchPackages();
+        }
+
+        public static async Task ListPackageVersionsAsync()
         {
             ILogger logger = NullLogger.Instance;
             CancellationToken cancellationToken = CancellationToken.None;
@@ -36,8 +51,7 @@ namespace NuGet.Protocol.Samples
             }
         }
 
-        [Fact]
-        public async Task DownloadPackage()
+        public static async Task DownloadPackageAsync()
         {
             ILogger logger = NullLogger.Instance;
             CancellationToken cancellationToken = CancellationToken.None;
@@ -67,8 +81,7 @@ namespace NuGet.Protocol.Samples
             Console.WriteLine($"Description: {nuspecReader.GetDescription()}");
         }
 
-        [Fact]
-        public async Task GetPackageMetadata()
+        public static async Task GetPackageMetadataAsync()
         {
             ILogger logger = NullLogger.Instance;
             CancellationToken cancellationToken = CancellationToken.None;
@@ -94,8 +107,7 @@ namespace NuGet.Protocol.Samples
             }
         }
 
-        [Fact]
-        public async Task SearchPackages()
+        public static async Task SearchPackages()
         {
             ILogger logger = NullLogger.Instance;
             CancellationToken cancellationToken = CancellationToken.None;
