@@ -135,7 +135,7 @@ namespace NuGet.Protocol.Samples
             {
                 Console.WriteLine($"Found package {result.Identity.Id} {result.Identity.Version}");
             }
-        }
 #endregion
+        }
     }
 }
