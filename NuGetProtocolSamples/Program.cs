@@ -32,6 +32,7 @@ namespace NuGet.Protocol.Samples
 
         public static async Task ListPackageVersionsAsync()
         {
+#region ListPackageVersions
             ILogger logger = NullLogger.Instance;
             CancellationToken cancellationToken = CancellationToken.None;
 
@@ -49,10 +50,12 @@ namespace NuGet.Protocol.Samples
             {
                 Console.WriteLine($"Found version {version}");
             }
+#endregion
         }
 
         public static async Task DownloadPackageAsync()
         {
+#region DownloadPackage
             ILogger logger = NullLogger.Instance;
             CancellationToken cancellationToken = CancellationToken.None;
 
@@ -79,10 +82,12 @@ namespace NuGet.Protocol.Samples
 
             Console.WriteLine($"Tags: {nuspecReader.GetTags()}");
             Console.WriteLine($"Description: {nuspecReader.GetDescription()}");
+#endregion
         }
 
         public static async Task GetPackageMetadataAsync()
         {
+#region GetPackageMetadata
             ILogger logger = NullLogger.Instance;
             CancellationToken cancellationToken = CancellationToken.None;
 
@@ -105,10 +110,12 @@ namespace NuGet.Protocol.Samples
                 Console.WriteLine($"Tags: {package.Tags}");
                 Console.WriteLine($"Description: {package.Description}");
             }
+#endregion
         }
 
         public static async Task SearchPackages()
         {
+#region SearchPackages
             ILogger logger = NullLogger.Instance;
             CancellationToken cancellationToken = CancellationToken.None;
 
@@ -129,5 +136,6 @@ namespace NuGet.Protocol.Samples
                 Console.WriteLine($"Found package {result.Identity.Id} {result.Identity.Version}");
             }
         }
+#endregion
     }
 }
