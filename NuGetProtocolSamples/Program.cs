@@ -55,7 +55,7 @@ namespace NuGet.Protocol.Samples
 
         public static async Task DownloadPackageAsync()
         {
-            // <DownloadPackage>
+#region DownloadPackage
             ILogger logger = NullLogger.Instance;
             CancellationToken cancellationToken = CancellationToken.None;
 
@@ -82,7 +82,7 @@ namespace NuGet.Protocol.Samples
 
             Console.WriteLine($"Tags: {nuspecReader.GetTags()}");
             Console.WriteLine($"Description: {nuspecReader.GetDescription()}");
-            // </DownloadPackage>
+#endregion
         }
 
         public static async Task GetPackageMetadataAsync()
