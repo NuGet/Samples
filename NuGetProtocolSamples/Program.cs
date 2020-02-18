@@ -32,6 +32,8 @@ namespace NuGet.Protocol.Samples
 
         public static async Task ListPackageVersionsAsync()
         {
+            // This code region is referenced by the NuGet docs. Please update the docs if you rename the region
+            // or move it to a different file.
 #region ListPackageVersions
             ILogger logger = NullLogger.Instance;
             CancellationToken cancellationToken = CancellationToken.None;
@@ -55,6 +57,8 @@ namespace NuGet.Protocol.Samples
 
         public static async Task DownloadPackageAsync()
         {
+            // This code region is referenced by the NuGet docs. Please update the docs if you rename the region
+            // or move it to a different file.
 #region DownloadPackage
             ILogger logger = NullLogger.Instance;
             CancellationToken cancellationToken = CancellationToken.None;
@@ -87,6 +91,8 @@ namespace NuGet.Protocol.Samples
 
         public static async Task GetPackageMetadataAsync()
         {
+            // This code region is referenced by the NuGet docs. Please update the docs if you rename the region
+            // or move it to a different file.
 #region GetPackageMetadata
             ILogger logger = NullLogger.Instance;
             CancellationToken cancellationToken = CancellationToken.None;
@@ -115,6 +121,8 @@ namespace NuGet.Protocol.Samples
 
         public static async Task SearchPackages()
         {
+            // This code region is referenced by the NuGet docs. Please update the docs if you rename the region
+            // or move it to a different file.
 #region SearchPackages
             ILogger logger = NullLogger.Instance;
             CancellationToken cancellationToken = CancellationToken.None;
