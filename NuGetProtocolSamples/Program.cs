@@ -4,7 +4,9 @@ using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 using NuGet.Common;
+using NuGet.Frameworks;
 using NuGet.Packaging;
+using NuGet.Packaging.Core;
 using NuGet.Protocol.Core.Types;
 using NuGet.Versioning;
 
@@ -26,8 +28,16 @@ namespace NuGet.Protocol.Samples
             await GetPackageMetadataAsync();
 
             Console.WriteLine();
-            Console.WriteLine("Search packages..");
+            Console.WriteLine("Search packages...");
             await SearchPackages();
+
+            Console.WriteLine();
+            Console.WriteLine("Creating a package...");
+            CreatePackage();
+
+            Console.WriteLine();
+            Console.WriteLine("Reading a package...");
+            ReadPackage();
         }
 
         public static async Task ListPackageVersionsAsync()
@@ -142,6 +152,69 @@ namespace NuGet.Protocol.Samples
             foreach (IPackageSearchMetadata result in results)
             {
                 Console.WriteLine($"Found package {result.Identity.Id} {result.Identity.Version}");
+            }
+#endregion
+        }
+
+        public static void CreatePackage()
+        {
+            // This code region is referenced by the NuGet docs. Please update the docs if you rename the region
+            // or move it to a different file.
+            //
+            // It is strongly recommended that NuGet packages are created using the official NuGet tooling and not
+            // using this low level API. There are a variety of characteristics important for a well-formed package
+            // and the latest version of tooling helps incorporate these best practices.
+            //
+            // For more information about creating NuGet packages, see the overview of the package creation workflow
+            // and the documentation for official pack tooling (e.g. using the dotnet CLI):
+            // https://docs.microsoft.com/en-us/nuget/create-packages/overview-and-workflow
+            // https://docs.microsoft.com/en-us/nuget/create-packages/creating-a-package-dotnet-cli
+#region CreatePackage
+            PackageBuilder builder = new PackageBuilder();
+            builder.Id = "MyPackage";
+            builder.Version = new NuGetVersion("1.0.0-beta");
+            builder.Description = "My package created from the API.";
+            builder.Authors.Add("Sample author");
+            builder.DependencyGroups.Add(new PackageDependencyGroup(
+                targetFramework: NuGetFramework.Parse("netstandard1.4"),
+                packages: new[]
+                {
+                    new PackageDependency("Newtonsoft.Json", VersionRange.Parse("10.0.1"))
+                }));
+
+            using FileStream outputStream = new FileStream("MyPackage.nupkg", FileMode.Create);
+            builder.Save(outputStream);
+            Console.WriteLine($"Saved a package to {outputStream.Name}");
+#endregion
+        }
+
+        private static void ReadPackage()
+        {
+            // This code region is referenced by the NuGet docs. Please update the docs if you rename the region
+            // or move it to a different file.
+#region ReadPackage
+            using FileStream inputStream = new FileStream("MyPackage.nupkg", FileMode.Open);
+            using PackageArchiveReader reader = new PackageArchiveReader(inputStream);
+            NuspecReader nuspec = reader.NuspecReader;
+            Console.WriteLine($"ID: {nuspec.GetId()}");
+            Console.WriteLine($"Version: {nuspec.GetVersion()}");
+            Console.WriteLine($"Description: {nuspec.GetDescription()}");
+            Console.WriteLine($"Authors: {nuspec.GetAuthors()}");
+
+            Console.WriteLine("Dependencies:");
+            foreach (var dependencyGroup in nuspec.GetDependencyGroups())
+            {
+                Console.WriteLine($" - {dependencyGroup.TargetFramework.GetShortFolderName()}");
+                foreach (var dependency in dependencyGroup.Packages)
+                {
+                    Console.WriteLine($"   > {dependency.Id} {dependency.VersionRange}");
+                }
+            }
+
+            Console.WriteLine("Files:");
+            foreach (var file in reader.GetFiles())
+            {
+                Console.WriteLine($" - {file}");
             }
 #endregion
         }
