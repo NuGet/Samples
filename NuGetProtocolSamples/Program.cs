@@ -160,6 +160,15 @@ namespace NuGet.Protocol.Samples
         {
             // This code region is referenced by the NuGet docs. Please update the docs if you rename the region
             // or move it to a different file.
+            //
+            // It is strongly recommended that NuGet packages are created using the official NuGet tooling and not
+            // using this low level API. There are a variety of characteristics important for a well-formed package
+            // and the latest version of tooling helps incorporate these best practices.
+            //
+            // For more information about creating NuGet packages, see the overview of the package creation workflow
+            // and the documentation for official pack tooling (e.g. using the dotnet CLI):
+            // https://docs.microsoft.com/en-us/nuget/create-packages/overview-and-workflow
+            // https://docs.microsoft.com/en-us/nuget/create-packages/creating-a-package-dotnet-cli
 #region CreatePackage
             PackageBuilder builder = new PackageBuilder();
             builder.Id = "MyPackage";
