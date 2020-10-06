@@ -48,7 +48,6 @@ namespace NuGet.Protocol.Samples
             // This code region is referenced by the NuGet docs. Please update the docs if you rename the region
             // or move it to a different file.
             #region ListPackageIds
-
             SourceRepository repository = Repository.Factory.GetCoreV3("https://api.nuget.org/v3/index.json"); // use custom feed here
             ListResource resource = await repository.GetResourceAsync<ListResource>();
             if (resource == null)
