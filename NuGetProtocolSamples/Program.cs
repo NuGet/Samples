@@ -16,6 +16,9 @@ namespace NuGet.Protocol.Samples
     {
         public static async Task Main(string[] args)
         {
+            Console.WriteLine("Listing package ids...");
+            await ListPackageIdsAsync();
+
             Console.WriteLine("Listing package versions...");
             await ListPackageVersionsAsync();
 
@@ -38,6 +41,48 @@ namespace NuGet.Protocol.Samples
             Console.WriteLine();
             Console.WriteLine("Reading a package...");
             ReadPackage();
+        }
+
+        public static async Task ListPackageIdsAsync()
+        {
+            // This code region is referenced by the NuGet docs. Please update the docs if you rename the region
+            // or move it to a different file.
+            #region ListPackageIds
+
+            SourceRepository repository = Repository.Factory.GetCoreV3("https://api.nuget.org/v3/index.json"); // use custom feed here
+            ListResource resource = await repository.GetResourceAsync<ListResource>();
+            if (resource == null)
+            {
+                Console.WriteLine("Package source doesn't support listing packages");
+                return;
+            }
+
+            var results = await resource.ListAsync(
+                null, // pass a search query or package ID to limit search
+                prerelease: true,
+                allVersions: false,
+                includeDelisted: false,
+                NullLogger.Instance,
+                CancellationToken.None);
+
+            var enumerator = results.GetEnumeratorAsync();
+
+            var packageIds = new List<string>();
+
+            int maxResults = 20; // important to limit to avoid returning all packages
+            int currentResult = 0;
+            while (currentResult < maxResults && await enumerator.MoveNextAsync())
+            {
+                var current = enumerator.Current;
+                packageIds.Add(current.Identity.Id);
+                currentResult += 1;
+            }
+
+            foreach (string packageId in packageIds)
+            {
+                Console.WriteLine($"Found package {packageId}");
+            }
+            #endregion
         }
 
         public static async Task ListPackageVersionsAsync()
