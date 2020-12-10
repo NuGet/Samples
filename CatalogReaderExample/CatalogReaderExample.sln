@@ -5,11 +5,7 @@ VisualStudioVersion = 15.0.27016.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatalogReaderExample", "CatalogReaderExample\CatalogReaderExample.csproj", "{B1DF62AC-4D9F-475A-951D-890F8E0CBBED}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NuGet.Protocol.Catalog", "NuGet.Protocol.Catalog\NuGet.Protocol.Catalog.csproj", "{5F9C8AC4-7FDC-426F-805D-9A32F75B3CDE}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NuGet.Protocol.Catalog.Test", "NuGet.Protocol.Catalog.Test\NuGet.Protocol.Catalog.Test.csproj", "{5BC3A5B0-D7E5-4EE2-9459-7484BDB810EE}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NuGet.Protocol.Catalog.Sample", "NuGet.Protocol.Catalog.Sample\NuGet.Protocol.Catalog.Sample.csproj", "{F4CFA39E-98EB-499E-946A-C7233812D1BA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NuGet.Protocol.Catalog.Sample", "NuGet.Protocol.Catalog.Sample\NuGet.Protocol.Catalog.Sample.csproj", "{F4CFA39E-98EB-499E-946A-C7233812D1BA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,14 +17,6 @@ Global
 		{B1DF62AC-4D9F-475A-951D-890F8E0CBBED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1DF62AC-4D9F-475A-951D-890F8E0CBBED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1DF62AC-4D9F-475A-951D-890F8E0CBBED}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5F9C8AC4-7FDC-426F-805D-9A32F75B3CDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5F9C8AC4-7FDC-426F-805D-9A32F75B3CDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5F9C8AC4-7FDC-426F-805D-9A32F75B3CDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5F9C8AC4-7FDC-426F-805D-9A32F75B3CDE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5BC3A5B0-D7E5-4EE2-9459-7484BDB810EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5BC3A5B0-D7E5-4EE2-9459-7484BDB810EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5BC3A5B0-D7E5-4EE2-9459-7484BDB810EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5BC3A5B0-D7E5-4EE2-9459-7484BDB810EE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F4CFA39E-98EB-499E-946A-C7233812D1BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F4CFA39E-98EB-499E-946A-C7233812D1BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F4CFA39E-98EB-499E-946A-C7233812D1BA}.Release|Any CPU.ActiveCfg = Release|Any CPU

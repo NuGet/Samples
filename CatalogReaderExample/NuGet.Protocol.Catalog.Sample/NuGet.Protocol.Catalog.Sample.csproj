@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -10,10 +10,7 @@
     <PackageReference Include="Microsoft.Extensions.Logging.Console">
       <Version>2.0.0</Version>
     </PackageReference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\NuGet.Protocol.Catalog\NuGet.Protocol.Catalog.csproj" />
+    <PackageReference Include="NuGet.Protocol.Catalog" Version="4.3.0-master-4284046" />
   </ItemGroup>
 
 </Project>

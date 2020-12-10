@@ -20,8 +20,9 @@ namespace NuGet.Protocol.Catalog
             using (var loggerFactory = new LoggerFactory().AddConsole(LogLevel.Warning))
             using (var httpClient = new HttpClient())
             {
+                var jsonClient = new SimpleHttpClient(httpClient, loggerFactory.CreateLogger<SimpleHttpClient>());
                 var fileCursor = new FileCursor("cursor.json", loggerFactory.CreateLogger<FileCursor>());
-                var catalogClient = new CatalogClient(httpClient, loggerFactory.CreateLogger<CatalogClient>());
+                var catalogClient = new CatalogClient(jsonClient, loggerFactory.CreateLogger<CatalogClient>());
                 var leafProcessor = new LoggerCatalogLeafProcessor(loggerFactory.CreateLogger<LoggerCatalogLeafProcessor>());
                 var settings = new CatalogProcessorSettings
                 {
