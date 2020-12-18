@@ -1,4 +1,5 @@
-﻿using System;
+﻿extern alias ExampleAlias;
+using System;
 
 namespace PackageReferenceAliasesExample
 {
@@ -6,7 +7,8 @@ namespace PackageReferenceAliasesExample
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var version = ExampleAlias.NuGet.Versioning.NuGetVersion.Parse("5.0.0");
+            Console.WriteLine($"Version : {version}");
         }
     }
 }
