@@ -29,7 +29,7 @@ namespace NuGet.Protocol.Samples
             await GetPackageMetadataAsync();
 
             Console.WriteLine();
-            Console.WriteLine("Search packages...");
+            Console.WriteLine("Searching packages...");
             await SearchPackages();
 
             Console.WriteLine();
@@ -39,6 +39,14 @@ namespace NuGet.Protocol.Samples
             Console.WriteLine();
             Console.WriteLine("Reading a package...");
             ReadPackage();
+
+            Console.WriteLine();
+            Console.WriteLine("Pushing a package...");
+            await PushPackageAsync();
+
+            Console.WriteLine();
+            Console.WriteLine("Deleting a package...");
+            await DeletePackageAsync();
         }
 
         public static async Task ListPackageVersionsAsync()
@@ -258,6 +266,72 @@ namespace NuGet.Protocol.Samples
                 Console.WriteLine($"Description: {package.Description}");
             }
             #endregion
+        }
+
+        private static async Task PushPackageAsync()
+        {
+            try
+            {
+                // This code region is referenced by the NuGet docs. Please update the docs if you rename the region
+                // or move it to a different file.
+                #region PushPackage
+                ILogger logger = NullLogger.Instance;
+                CancellationToken cancellationToken = CancellationToken.None;
+
+                SourceCacheContext cache = new SourceCacheContext();
+                SourceRepository repository = Repository.Factory.GetCoreV3("https://api.nuget.org/v3/index.json");
+                PackageUpdateResource resource = await repository.GetResourceAsync<PackageUpdateResource>();
+
+                string apiKey = "my-api-key";
+
+                await resource.Push(
+                    "MyPackage.nupkg",
+                    symbolSource: null,
+                    timeoutInSecond: 5 * 60,
+                    disableBuffering: false,
+                    getApiKey: packageSource => apiKey,
+                    getSymbolApiKey: packageSource => null,
+                    noServiceEndpoint: false,
+                    skipDuplicate: false,
+                    symbolPackageUpdateResource: null,
+                    logger);
+                #endregion
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"Pushing package failed: {e}");
+            }
+        }
+
+        private static async Task DeletePackageAsync()
+        {
+            try
+            {
+                // This code region is referenced by the NuGet docs. Please update the docs if you rename the region
+                // or move it to a different file.
+                #region DeletePackage
+                ILogger logger = NullLogger.Instance;
+                CancellationToken cancellationToken = CancellationToken.None;
+
+                SourceCacheContext cache = new SourceCacheContext();
+                SourceRepository repository = Repository.Factory.GetCoreV3("https://api.nuget.org/v3/index.json");
+                PackageUpdateResource resource = await repository.GetResourceAsync<PackageUpdateResource>();
+
+                string apiKey = "my-api-key";
+
+                await resource.Delete(
+                    "MyPackage",
+                    "1.0.0-beta",
+                    getApiKey: packageSource => apiKey,
+                    confirm: packageSource => true,
+                    noServiceEndpoint: false,
+                    logger);
+                #endregion
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"Deleting package failed: {e}");
+            }
         }
     }
 }
