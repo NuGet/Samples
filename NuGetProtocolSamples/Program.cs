@@ -238,7 +238,7 @@ namespace NuGet.Protocol.Samples
                     isPasswordClearText: true,
                     validAuthenticationTypesText: null)
             };
-            // If the `SourceRepository is created with a `PackageSource`, the rest of APIs will consume the credentials attached to `PackageSource.Credentials`.
+            // If the `SourceRepository` is created with a `PackageSource`, the rest of APIs will consume the credentials attached to `PackageSource.Credentials`.
             SourceRepository repository = Repository.Factory.GetCoreV3(packageSource);
             PackageMetadataResource resource = await repository.GetResourceAsync<PackageMetadataResource>();
 
