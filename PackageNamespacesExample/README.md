@@ -1,6 +1,6 @@
 # Package Namespaces example
 
-This is an example demonstrating the package namespaces feature.
+This is an example demonstrating the [package namespaces feature](https://github.com/NuGet/Home/blob/dev/proposed/2021/PackageNamespaces.md).
 At the time of this writing, only a limited restore functionality is supported.
 
 * [Visual Studio 2022 preview 3 and later](https://visualstudio.microsoft.com/vs/preview/).
