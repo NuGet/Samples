@@ -7,4 +7,4 @@ At the time of this writing, only a limited restore functionality is supported.
 * [nuget.exe 6.0.0-preview.3 and later](https://www.nuget.org/downloads).
 * [.NET SDK 6.0 preview 7 and later](https://devblogs.microsoft.com/dotnet/announcing-net-6-preview-7/)
 
-Here's an [example](https://github.com/NuGet/NuGet.Client/blob/dev-kartheekp-ms-dogfood-namespaces/NuGet.Config) of how the NuGet.Config for the NuGet.CLient repo looks like in our dogfooding efforts.
+Here's an [example](https://github.com/NuGet/NuGet.Client/blob/dev-kartheekp-ms-dogfood-namespaces/NuGet.Config) of how the NuGet.Config for the NuGet.Client repo looks like in our dogfooding efforts.
