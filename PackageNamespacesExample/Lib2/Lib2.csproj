@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="A" Version="5.0.0" />
+    <PackageReference Include="B" Version="3.0.0" />
+    <PackageReference Include="C" Version="3.0.0" />
+  </ItemGroup>
+
+</Project>
