@@ -22,6 +22,8 @@ This project has adopted the [Microsoft Open Source Code of Conduct](https://ope
 
 1. [PackageDownloadsExample](PackageDownloadsExample) shows how to get a package's download counts.
 
+1. [PackageSourceMappingExample](PackageSourceMappingExample) is a sample solution that shows how to configure Package Source Mapping for a couple projects and packages. [The README](PackageSourceMappingExample/README.md) contains many smaller example scenarios and results.
+
 ## Documentation and Further Learning
 
 The [NuGet Docs](http://docs.nuget.org) cover creating NuGet packages in more detail:
