@@ -52,13 +52,13 @@ public class InterfaceStubGenerator : ISourceGenerator
 
     }
 
-  
+
 
 #if ROSLYN_4
 
     public void Initialize(IncrementalGeneratorInitializationContext context)
     {
-        // See docs ____ for more details on incremental generators
+        // See docs https://docs.microsoft.com/en-us/dotnet/csharp/roslyn-sdk/source-generators-overview for more details on incremental generators
 
         // Here we're looking for Properties with an attribute that are in a class
         var candidatePropertiesProvider = context.SyntaxProvider.CreateSyntaxProvider(
