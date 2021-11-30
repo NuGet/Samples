@@ -1,0 +1,57 @@
+<Project>
+
+  <PropertyGroup>
+
+    <!--
+    Default value for this property ThisPropertysValueCanBeUsedInTheGenerator
+    Can be overriden by setting in the project file
+    -->
+    <ThisPropertysValueCanBeUsedInTheGenerator Condition=" '$(ThisPropertysValueCanBeUsedInTheGenerator)' == '' ">$(RootNamespace)</ThisPropertysValueCanBeUsedInTheGenerator>
+
+    <!-- Miniumum MSBuild version for Source Generators. This is Roslyn 3.8. -->
+    <_SourceGeneratorExampleMSBuildMinVersion>16.8.0</_SourceGeneratorExampleMSBuildMinVersion>
+    
+  </PropertyGroup>
+
+  <Target Name="_SourceGeneratorExampleGatherAnalyzers">
+    <ItemGroup>
+      <_SourceGeneratorExampleAnalyzer Include="@(Analyzer)" Condition="'%(Analyzer.NuGetPackageId)' == 'SourceGeneratorExample'" />
+    </ItemGroup>
+  </Target>
+
+  <Target Name="_SourceGeneratorExampleAnalyzerMultiTargeting" 
+          Condition="'$(SupportsRoslynComponentVersioning)' != 'true'" 
+          AfterTargets="ResolvePackageDependenciesForBuild;ResolveNuGetPackageAssets"
+          DependsOnTargets="_SourceGeneratorExampleGatherAnalyzers">
+
+    <ItemGroup>
+      <!-- Remove our analyzers targeting roslyn4.x -->
+      <Analyzer Remove="@(_SourceGeneratorExampleAnalyzer)"
+                Condition="$([System.String]::Copy('%(_SourceGeneratorExampleAnalyzer.Identity)').IndexOf('roslyn4')) &gt;= 0"/>
+    </ItemGroup>
+  </Target>
+
+  <!-- Provide a way to disble the generator by setting DisableSourceGeneratorExampleSourceGenerator to true -->
+  <Target Name="_SourceGeneratorExampleRemoveAnalyzers" 
+          Condition="'$(DisableSourceGeneratorExampleSourceGenerator)' == 'true'"
+          AfterTargets="ResolvePackageDependenciesForBuild;ResolveNuGetPackageAssets"
+          DependsOnTargets="_SourceGeneratorExampleGatherAnalyzers">
+
+    <!-- Remove all our analyzers -->
+    <ItemGroup>
+      <Analyzer Remove="@(_SourceGeneratorExampleAnalyzer)" />
+    </ItemGroup>
+  </Target>
+
+  <Target Name="_SourceGeneratorExampleMSBuildVersionCheck"
+          Condition=" '$([System.Version]::Parse($(_SourceGeneratorExampleMSBuildMinVersion)).CompareTo($([System.Version]::Parse($(MSBuildVersion)))))' &gt; '0' "
+     BeforeTargets="ResolveAssemblyReferences;Build;Rebuild" >
+    <Error
+        Text = "Projects using SourceGeneratorExample cannot build using MSBuild '$(MSBuildVersion)'. MSBuild '$(_SourceGeneratorExampleMSBuildMinVersion)' or later is required." />
+  </Target>
+
+  <Target Name="_SourceGeneratorExampleProjectRestoreTypeCheck" BeforeTargets="ResolveAssemblyReferences;Build;Rebuild" DependsOnTargets="_GetRestoreProjectStyle">
+    <Error Condition="'$(RestoreProjectStyle)' == 'PackagesConfig'"
+           Text="Packages.config does not support Analyzers, including Source Generators. Migrate to PackageReference: 'https://devblogs.microsoft.com/nuget/migrate-packages-config-to-package-reference/'" />
+  </Target>
+</Project>

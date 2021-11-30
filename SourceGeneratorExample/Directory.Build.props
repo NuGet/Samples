@@ -1,0 +1,10 @@
+<Project>  
+  
+  <PropertyGroup>            
+    <AssemblyOriginatorKeyFile>$(MSBuildThisFileDirectory)key.snk</AssemblyOriginatorKeyFile>
+    <LangVersion>latest</LangVersion>
+    <SignAssembly>true</SignAssembly>
+    <DebugType>embedded</DebugType>
+  </PropertyGroup>
+
+</Project>
