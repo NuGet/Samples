@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <!--
+      A version of 13.0.1 is defined in a PackageVersion item in Directory.Packages.props and defining a version
+      here will result in an error.
+    -->
+    <PackageReference Include="Newtonsoft.Json" />
+  </ItemGroup>
+</Project>
