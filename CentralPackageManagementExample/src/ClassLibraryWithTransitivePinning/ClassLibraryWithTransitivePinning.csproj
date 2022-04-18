@@ -13,6 +13,10 @@
     <CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
   </PropertyGroup>
   <ItemGroup>
+    <!--
+      Newtonsoft.Json.Bson depends on Newtonsoft.Json version 12.0.1 but since CentralPackageTransitivePinningEnabled
+      is enabled and a PackageVersion for Newtonsoft.Json is defined as 13.0.1, that version will be used instead.
+    -->
     <PackageReference Include="Newtonsoft.Json.Bson" />
   </ItemGroup>
 </Project>
