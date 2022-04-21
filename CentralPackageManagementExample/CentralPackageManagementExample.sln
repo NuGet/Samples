@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{690AC2F1-77C0-4D25-A3E7-C4ADF4DA9FF2}"
+	ProjectSection(SolutionItems) = preProject
+		Directory.Build.props = Directory.Build.props
+		Directory.Build.targets = Directory.Build.targets
+		Directory.Packages.props = Directory.Packages.props
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClassLibrary1", "src\ClassLibrary1\ClassLibrary1.csproj", "{C51638D7-8395-4BBB-AD14-11ED0DF5A60F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibraryWithVersionOverride", "src\ClassLibraryWithVersionOverride\ClassLibraryWithVersionOverride.csproj", "{CDA4612D-CFB4-4919-AA50-6F72C4F6DA9F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibraryWithTransitivePinning", "src\ClassLibraryWithTransitivePinning\ClassLibraryWithTransitivePinning.csproj", "{2F464F8F-DCCD-4E42-9574-07278260921B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C51638D7-8395-4BBB-AD14-11ED0DF5A60F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C51638D7-8395-4BBB-AD14-11ED0DF5A60F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C51638D7-8395-4BBB-AD14-11ED0DF5A60F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C51638D7-8395-4BBB-AD14-11ED0DF5A60F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDA4612D-CFB4-4919-AA50-6F72C4F6DA9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDA4612D-CFB4-4919-AA50-6F72C4F6DA9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDA4612D-CFB4-4919-AA50-6F72C4F6DA9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDA4612D-CFB4-4919-AA50-6F72C4F6DA9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F464F8F-DCCD-4E42-9574-07278260921B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F464F8F-DCCD-4E42-9574-07278260921B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F464F8F-DCCD-4E42-9574-07278260921B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F464F8F-DCCD-4E42-9574-07278260921B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AB7D7D9C-C530-4616-AF02-628545E5C5D6}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <!--
+      By default, transitive dependency versions are determined by resolving the package metadata defined by the
+      graph.  To override the version of a transitive dependency, you would normally need to add that package as
+      a top-level dependency.  The CentralPackageTransitivePinningEnabled property tells NuGet that if any
+      PackageVersion is defined in Directory.Packages.props that matches any transitive dependency to use that
+      version instead and elevate it to a top-level dependency.
+    -->
+    <CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
+  </PropertyGroup>
+  <ItemGroup>
+    <!--
+      Newtonsoft.Json.Bson depends on Newtonsoft.Json version 12.0.1 but since CentralPackageTransitivePinningEnabled
+      is enabled and a PackageVersion for Newtonsoft.Json is defined as 13.0.1, that version will be used instead.
+    -->
+    <PackageReference Include="Newtonsoft.Json.Bson" />
+  </ItemGroup>
+</Project>
