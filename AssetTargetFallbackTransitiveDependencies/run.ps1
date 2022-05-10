@@ -3,14 +3,24 @@ $NuGetExe620 = Join-Path $PSScriptRoot '.nuget\nuget-6.2.0.exe'
 
 if (-not (Test-Path $NuGetExe610)) {
     Write-Host "Downloading NuGet.exe to $NuGetExe610" -ForegroundColor blue
-    New-Item  -ItemType directory  (Join-Path $PSScriptRoot '.nuget') | Out-Null
+
+    $NuGetDirectory = (Join-Path $PSScriptRoot '.nuget')
+    if (-not (Test-Path $NuGetDirectory)) {
+        New-Item  -ItemType directory $NuGetDirectory (Join-Path $PSScriptRoot '.nuget') | Out-Null
+    }
+
     Invoke-WebRequest https://dist.nuget.org/win-x86-commandline/v6.1.0/nuget.exe -OutFile $NuGetExe610
 }
 
 if (-not (Test-Path $NuGetExe620)) {
     Write-Host "Downloading NuGet.exe to $NuGetExe620" -ForegroundColor blue
-    New-Item  -ItemType directory  (Join-Path $PSScriptRoot '.nuget') | Out-Null
-    Invoke-WebRequest https://dist.nuget.org/win-x86-commandline/v6.2.0/nuget.exe -OutFile $NuGetExe610
+
+    $NuGetDirectory = (Join-Path $PSScriptRoot '.nuget')
+    if (-not (Test-Path $NuGetDirectory)) {
+        New-Item  -ItemType directory $NuGetDirectory (Join-Path $PSScriptRoot '.nuget') | Out-Null
+    }
+
+    Invoke-WebRequest https://dist.nuget.org/win-x86-commandline/v6.2.0/nuget.exe -OutFile $NuGetExe620
 }
 
 Remove-Item $(Join-Path "A" "obj" -Resolve) -Force -Recurse -Confirm:$false
