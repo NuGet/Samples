@@ -65,5 +65,10 @@ If there are issues that you don't know how to resolve, consider filing a NuGet/
 
 ## ProjectReference and AssetTargetFallback
 
-Note that the equivalent behavior of transitive dependencies applies to transitives through ProjectReference as well, whether those are packages or projects. 
+Note that the equivalent behavior of transitive dependencies applies to transitives through ProjectReference as well, whether those are packages or projects.
 We don't expect this to be a common scenario, but the similar guidances apply.
+
+## References
+
+* Issue filled about consequences from this change: <https://github.com/NuGet/Home/issues/11564>
+* Design document for the change: <https://github.com/NuGet/Home/blob/dev/proposed/2022/AssetTargetFallback-DependenciesResolution.md>
