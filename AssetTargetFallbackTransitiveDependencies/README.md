@@ -40,10 +40,30 @@ Note that the dependency package is installed now.
 ## Practical example
 
 ```console
-A/project (net6.0) -> NuGet.PackageManagement/4.8.0 (net472)
+A/project (net6.0) -> NuGet.PackageManagement/4.8.0 (net472) -> Microsoft.Web.Xdt/2.1.2 (net40)
 ```
+
+Note that `NuGet.PackageManagement` has other dependencies as well, in addition to Microsoft.Web.Xdt.
+
+Run the `.\run.ps1` script for a demo.
 
 .\run.ps1 restores with 6.1.0 first, and then with 6.2.0 later and prints the packages after that.
 
 Notice that 6.1.0 was not including all the necessary packages, but 6.2.0 is.
-The transitive dependencies of NuGet.PackageManagement were not getting included in 6.1.0, but they are in 6.2.0 and they should have been.
+
+## What might I see
+
+If you have a straightforward scenario like some of the above, you're likely to see more packages that should've downloaded before be downloaded now.
+You may not need to do anything.
+
+Depending on your scenario you may see one or more of the following:
+
+* You may get more NU1701 warnings. This simply indicates that more packages that are not immediately compatible are getting restored.
+* Other NU warnings and errors. Unfortunately when more packages are brought in a package graph, they may affect the resolution of previous packages. The coded NuGet warnings/errors usually have a root cause and wherever possible instructions how to address them.
+If there are issues that you don't know how to resolve, consider filing a NuGet/Home issue or discussion.
+* If you were aware of this issue existing in the first place, you may have added the transitive packages as top-level already. You might be able to remove those. (Un)fortunately you may not see any impact if you had already done that.
+
+## ProjectReference and AssetTargetFallback
+
+Note that the equivalent behavior of transitive dependencies applies to transitives through ProjectReference as well, whether those are packages or projects. 
+We don't expect this to be a common scenario, but the similar guidances apply.

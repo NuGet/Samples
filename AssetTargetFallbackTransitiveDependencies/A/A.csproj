@@ -7,6 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="NuGet.PackageManagement" Version="4.8.0" NoWarn="NU1701" />
+    <PackageReference Include="NuGet.PackageManagement" Version="4.8.0" />
   </ItemGroup>
 </Project>
