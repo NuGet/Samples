@@ -23,12 +23,19 @@ if (-not (Test-Path $NuGetExe620)) {
     Invoke-WebRequest https://dist.nuget.org/win-x86-commandline/v6.2.0/nuget.exe -OutFile $NuGetExe620
 }
 
-Remove-Item $(Join-Path "A" "obj" -Resolve) -Force -Recurse -Confirm:$false
+$ObjFolder = $(Join-Path "A" "obj" -Resolve)
+
+if (Test-Path $ObjFolder) {
+    Remove-Item $ObjFolder -Force -Recurse -Confirm:$false
+}
 Write-Host "Running restore with 6.1" -ForegroundColor green
 . $NuGetExe610 restore NU1701Transitive.sln -Verbosity Quiet
 Write-Host "Running dotnet list package" -ForegroundColor green
 dotnet list package --include-transitive
-Remove-Item $(Join-Path "A" "obj" -Resolve) -Force -Recurse -Confirm:$false
+
+if (Test-Path $ObjFolder) {
+    Remove-Item $ObjFolder -Force -Recurse -Confirm:$false
+}
 Write-Host "Running restore with 6.2" -ForegroundColor green
 . $NuGetExe620 restore NU1701Transitive.sln -Verbosity Quiet
 Write-Host "Running dotnet list package" -ForegroundColor green
