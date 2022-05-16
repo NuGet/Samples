@@ -58,7 +58,7 @@ You may not need to do anything.
 
 Depending on your scenario you may see one or more of the following:
 
-* You may get more NU1701 warnings. This simply indicates that more packages that are not immediately compatible are getting restored.
+* You may get more NU1701 warnings. It is not uncommon that projects `TreatWarningsAsErrors`, so you may see it as an error in your project, but it is only a warning according to the tooling. This simply indicates that more packages that are not immediately compatible are getting restored.
 * Other NU warnings and errors. Unfortunately when more packages are brought in a package graph, they may affect the resolution of previous packages. The coded NuGet warnings/errors usually have a root cause and wherever possible instructions how to address them.
 If there are issues that you don't know how to resolve, consider filing a NuGet/Home issue or discussion.
 * If you were aware of this issue existing in the first place, you may have added the transitive packages as top-level already. You might be able to remove those. (Un)fortunately you may not see any impact if you had already done that.
