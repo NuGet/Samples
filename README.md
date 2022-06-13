@@ -24,6 +24,8 @@ This project has adopted the [Microsoft Open Source Code of Conduct](https://ope
 
 1. [PackageSourceMappingExample](PackageSourceMappingExample) is a sample solution that shows how to configure Package Source Mapping for a couple projects and packages. [The README](PackageSourceMappingExample/README.md) contains many smaller example scenarios and results.
 
+1. [SourceGeneratorSample](SourceGeneratorSample) is a sample solution showing how to build and pack a Source Generator that targets multiple Roslyn API versions. For more information see [Source Generators](https://docs.microsoft.com/en-us/dotnet/csharp/roslyn-sdk/source-generators-overview)
+
 ## Documentation and Further Learning
 
 The [NuGet Docs](http://docs.nuget.org) cover creating NuGet packages in more detail:

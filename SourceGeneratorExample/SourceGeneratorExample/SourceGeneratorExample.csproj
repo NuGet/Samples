@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>    
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>  
+  
+  <ItemGroup>
+    <ProjectReference Include="..\SourceGeneratorExample.Roslyn38\SourceGeneratorExample.Roslyn38.csproj" ReferenceOutputAssembly="false" />
+    <ProjectReference Include="..\SourceGeneratorExample.Roslyn40\SourceGeneratorExample.Roslyn40.csproj" ReferenceOutputAssembly="false" />
+  </ItemGroup>
+
+  <ItemGroup Label="Package">
+    <None Include="targets\SourceGeneratorExample.targets" PackagePath="buildTransitive\netstandard2.0" Pack="true" />
+    <None Include="targets\SourceGeneratorExample.props" PackagePath="buildTransitive\netstandard2.0" Pack="true" />
+
+    <!-- We need this one to catch older clients -->
+    <None Include="targets\SourceGeneratorExample.targets" PackagePath="build\netstandard2.0" Pack="true" />
+
+    <None Include="..\SourceGeneratorExample.Roslyn38\bin\$(Configuration)\netstandard2.0\SourceGeneratorExampleV1.dll"
+          PackagePath="analyzers\dotnet\roslyn3.8\cs"
+          Pack="true"
+          Visible="false" />
+
+    <None Include="..\SourceGeneratorExample.Roslyn40\bin\$(Configuration)\netstandard2.0\SourceGeneratorExampleV2.dll"
+          PackagePath="analyzers\dotnet\roslyn4.0\cs"
+          Pack="true"
+          Visible="false" />
+  </ItemGroup>
+
+
+</Project>
