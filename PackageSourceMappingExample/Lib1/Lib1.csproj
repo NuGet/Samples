@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="NuGet.Commands" Version="5.10.0" />
+    <PackageReference Include="NuGet.Commands" Version="5.11.3" />
     <PackageReference Include="NuGet.Protocol.VisualStudio" Version="3.3.0" />
   </ItemGroup>
 
